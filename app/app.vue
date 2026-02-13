@@ -53,8 +53,7 @@ const profile = {
     },
   ],
 
-  bio: `
-    どうも．浮田 嵩祐です．AIに関する研究をしている大学院生です．
+  bio: `どうも．浮田 嵩祐です．AIに関する研究をしている大学院生です．
     生成AIの効率化や基礎理論(e.g. grokking)に興味があります．
     Department of Creative Informatics, Graduate School of Computer Science and Systems Engineering.
   `
@@ -256,13 +255,13 @@ const education = [
   { 
     degree: "PhD in Creative Informatics", 
     school: "Kyushu Institute of Technology, Graduate School of Computer Science and Systems Engineering", 
-    year: "Apr. 2026 - Present", 
+    year: "Apr. 2026 - Present (expexted)", 
     description: "Advisor: Assoc. Prof. Tsuyoshi Okita" 
   },
   { 
     degree: "MSc in Creative Informatics", 
     school: "Kyushu Institute of Technology, Graduate School of Computer Science and Systems Engineering", 
-    year: "Apr. 2024 - Mar. 2026", 
+    year: "Apr. 2024 - Mar. 2026 (expexted)", 
     description: "GPA: 3.6 / 4.0" 
   },
   { 
