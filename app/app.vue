@@ -34,7 +34,7 @@ const profile = {
       color: "hover:text-blue-700" 
     },
     { 
-      name: "X (Twitter)", 
+      name: "X", 
       url: "./", 
       icon: "fa6-brands:x-twitter", 
       color: "hover:text-black" 
@@ -43,8 +43,8 @@ const profile = {
 
   bio: `
     I am a researcher and upcoming PhD student at Kyushu Institute of Technology, Graduate School of Computer Science and Systems Engineering.
-    My research interests include Generative AI, Flow Matching, Foundation Model, Multimodal Learning and Deep Learning.
-    I aim to develop foundational models for understanding high representation.
+    I aim to construct high-performance, energy-efficient, and small-scale foundation models for advanced representation learning.
+    [Keywords: Generative AI, Foundation Model, Multimodal Learning]
   `
 }
 
@@ -80,9 +80,9 @@ const publications = [
     note: "Refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
+      { name: "Paper", url: "https://openreview.net/forum?id=yW5dvLytON", icon: "heroicons:document-text" },
       { name: "Code", url: "#", icon: "heroicons:code-bracket" },
-      { name: "Arxiv", url: "#", icon: "heroicons:document-text" },
+      { name: "Arxiv", url: "https://arxiv.org/abs/2512.19729", icon: "heroicons:document-text" },
     ]
   },
   {
@@ -95,8 +95,7 @@ const publications = [
     note: "Refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Paper", url: "https://dl.acm.org/doi/10.1145/3714394.3756203", icon: "heroicons:document-text" },
     ]
   },
   {
@@ -109,8 +108,8 @@ const publications = [
     note: "Refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Paper", url: "https://www.jstage.jst.go.jp/article/ijabc/2025/3/2025_124/_article/-char/en", icon: "heroicons:document-text" },
+      { name: "Arxiv", url: "https://arxiv.org/abs/2506.03174", icon: "heroicons:document-text" },
     ]
   },
   {
@@ -123,8 +122,7 @@ const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Paper", url: "https://www.dropbox.com/scl/fi/i3yjkrd9lqaybflfzmlss/Poster-Session.xlsx?rlkey=0bntd96bmxtje3f0r04w6yeat&e=1&st=rdyvop6k&dl=0", icon: "heroicons:document-text" },
     ]
   },
   {
@@ -137,8 +135,7 @@ const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Arxiv", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Arxiv", url: "https://arxiv.org/abs/2505.06890", icon: "heroicons:document-text" },
     ]
   },
   {
@@ -151,8 +148,8 @@ const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Paper", url: "https://kyutech.repo.nii.ac.jp/record/2001921/files/10463229.pdf", icon: "heroicons:document-text" },
+      { name: "Workshop", url: "https://mbl.ipsj.or.jp/program/2025/114/", icon: "heroicons:building-library" },
     ]
   },
   {
@@ -165,8 +162,7 @@ const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Workshop", url: "https://conferenceservice.jp/www/saes2024/", icon: "heroicons:building-library" },
     ]
   },
   {
@@ -179,8 +175,7 @@ const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Workshop", url: "https://conferenceservice.jp/www/saes2024/", icon: "heroicons:building-library" },
     ]
   },
   {
@@ -193,8 +188,7 @@ const publications = [
     note: "Refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Paper", url: "https://dl.acm.org/doi/10.1145/3675094.3678439", icon: "heroicons:document-text" },
     ]
   },
   {
@@ -207,8 +201,7 @@ const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Paper", url: "https://www.ipsj-kyushu.jp/page/ronbun/hinokuni/1013/Papers/A4-4.pdf", icon: "heroicons:document-text" },
     ]
   },
   {
@@ -221,8 +214,8 @@ const publications = [
     note: "Refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "#", icon: "heroicons:document-text" },
-      { name: "Code", url: "#", icon: "heroicons:code-bracket" },
+      { name: "Paper", url: "https://dl.acm.org/doi/10.1145/3594739.3610745", icon: "heroicons:document-text" },
+      { name: "Code", url: "https://github.com/Okita-Laboratory/SENvT", icon: "heroicons:code-bracket" },
     ]
   },
 ]
@@ -241,7 +234,7 @@ const awards = [
   },
   { 
     title: "Highest Award (最優秀賞)", 
-    organization: "The 8th Sports Data Analysis Competition (Secondary Education Category)", 
+    organization: "The 8th Sports Data Analysis Competition", 
     year: "May 2019", icon: "heroicons:academic-cap" 
   },
 ]
@@ -256,9 +249,9 @@ const education = [
   },
   { 
     degree: "MSc in Creative Informatics", 
-    school: "Kyushu Institute of Technology", 
+    school: "Kyushu Institute of Technology, Graduate School of Computer Science and Systems Engineering", 
     year: "Apr. 2024 - Mar. 2026", 
-    description: "Advisor: Assoc. Prof. Tsuyoshi Okita, GPA: 3.6 / 4.0" 
+    description: "GPA: 3.6 / 4.0" 
   },
   { 
     degree: "BSc in Intelligent Control Systems", 
@@ -276,26 +269,26 @@ const education = [
 
 // --- skills ---
 const skills = [
-  { category: "Research Interests", items: ["Generative AI", "Diffusion Models", "Flow Matching", "Machine Learning"] },
+  { category: "Research Interests", items: ["Generative AI", "Flow Matching", "Foundation Models", "Multimodal Learning", "Diffusion Models", "Machine Learning", "Deep Learning"] },
   { category: "Languages", items: ["Python", "C++", "C", "Java", "JavaScript", "TypeScript", "SQL", "R"] },
   { category: "Frameworks & Tools", items: ["PyTorch", "Docker", "Git", "ABCI (HPC)"] },
 ]
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-slate-800 font-sans selection:bg-blue-100">
+  <div class="min-h-screen bg-white text-slate-800 font-sans selection:bg-orange-100">
     
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
       <div class="max-w-5xl mx-auto px-6 h-16 flex justify-between items-center">
         <a :href="`${base}`" class="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">{{ profile.name }}</a>
         
         <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-          <a :href="`${base}#about`" class="hover:text-blue-600 transition flex items-center gap-1"><Icon name="heroicons:user" /> About </a>
-          <a :href="`${base}#news`" class="hover:text-blue-600 transition flex items-center gap-1"><Icon name="heroicons:newspaper" /> News </a>
-          <a :href="`${base}#publications`" class="hover:text-blue-600 transition flex items-center gap-1"><Icon name="heroicons:book-open" /> Publications </a>
-          <a :href="`${base}#awards`" class="hover:text-blue-600 transition"><Icon name="heroicons:trophy" /> Awards </a>
-          <a :href="`${base}#education`" class="hover:text-blue-600 transition"><Icon name="heroicons:academic-cap" /> Education </a>
-          <a :href="`${base}#skills`" class="hover:text-blue-600 transition"><Icon name="heroicons:cpu-chip" /> Skills </a>
+          <a :href="`${base}#about`" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:user" /> About </a>
+          <a :href="`${base}#news`" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:newspaper" /> News </a>
+          <a :href="`${base}#publications`" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:book-open" /> Publications </a>
+          <a :href="`${base}#awards`" class="hover:text-orange-600 transition"><Icon name="heroicons:trophy" /> Awards </a>
+          <a :href="`${base}#education`" class="hover:text-orange-600 transition"><Icon name="heroicons:academic-cap" /> Education </a>
+          <a :href="`${base}#skills`" class="hover:text-orange-600 transition"><Icon name="heroicons:cpu-chip" /> Skills </a>
         </nav>
 
         <button class="md:hidden text-slate-600">
@@ -319,9 +312,9 @@ const skills = [
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-2">
               {{ profile.name }}
             </h1>
-            <h3 class="text-2xl font-bold">浮田 嵩祐</h3>
+            <h1 class="text-xl font-bold">浮田 嵩祐</h1>
 
-            <p class="text-xl text-blue-600 font-medium">{{ profile.role }}</p>
+            <p class="text-xl text-orange-600 font-medium">{{ profile.role }}</p>
             <p class="text-slate-500 flex items-center gap-2">
               <Icon name="heroicons:building-library" /> {{ profile.affiliation }}
             </p>
@@ -346,7 +339,7 @@ const skills = [
 
       <section id="news" class="scroll-mt-24">
         <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-6">
-          <Icon name="heroicons:megaphone" class="text-blue-500" /> News
+          <Icon name="heroicons:megaphone" class="text-orange-500" /> News
         </h3>
         <div class="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
           <div v-for="(item, index) in news" :key="index" 
@@ -358,14 +351,14 @@ const skills = [
       </section>
 
       <section id="publications" class="scroll-mt-24">
-        <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-8"><Icon name="heroicons:book-open" class="text-blue-500" /> Publications </h3>
+        <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-8"><Icon name="heroicons:book-open" class="text-orange-500" /> Publications </h3>
         
         <div class="space-y-6">
           <article v-for="(paper, index) in publications" :key="index" 
-                   class="flex flex-col group p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all duration-300">
+                   class="flex flex-col group p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-orange-200 hover:shadow-md transition-all duration-300">
             
             <div class="space-y-3 mb-4">
-              <h4 class="text-xl font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
+              <h4 class="text-xl font-bold text-slate-900 leading-snug group-hover:text-orange-600 transition-colors">
                 {{ paper.title }}
               </h4>
               <div class="text-slate-700 text-base">
@@ -387,7 +380,7 @@ const skills = [
                   {{ paper.location }}
                 </span>
                 <div class="flex gap-2">
-                  <span v-if="paper.type" class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100">
+                  <span v-if="paper.type" class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-orange-50 text-orange-700 border border-orange-100">
                     {{ paper.type }}
                   </span>
                   <span v-if="paper.note" class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-50 text-green-700 border border-green-100">
@@ -399,7 +392,7 @@ const skills = [
 
             <div class="flex flex-wrap gap-3">
               <a v-for="link in paper.links" :key="link.name" :href="link.url" 
-                 class="flex items-center gap-2 text-sm font-bold text-slate-700 border border-slate-300 px-4 py-2 rounded-lg hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition bg-slate-50">
+                 class="flex items-center gap-2 text-sm font-bold text-slate-700 border border-slate-300 px-4 py-2 rounded-lg hover:border-orange-600 hover:text-orange-600 hover:bg-orange-50 transition bg-slate-50">
                 <Icon :name="link.icon" class="w-4 h-4" />
                 {{ link.name }}
               </a>
@@ -411,12 +404,12 @@ const skills = [
 
       <section id="awards" class="scroll-mt-24">
         <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-6">
-          <Icon name="heroicons:trophy" class="text-blue-500" /> Awards
+          <Icon name="heroicons:trophy" class="text-orange-500" /> Awards
         </h3>
         
         <div class="space-y-4">
           <div v-for="(award, index) in awards" :key="index" 
-               class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:border-blue-200 hover:shadow-md transition flex items-center gap-4">
+               class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:border-orange-200 hover:shadow-md transition flex items-center gap-4">
             
             <div class="p-3 bg-yellow-50 text-yellow-600 rounded-lg shrink-0">
                <Icon :name="award.icon" class="w-6 h-6" />
@@ -437,12 +430,12 @@ const skills = [
 
       <section id="education" class="scroll-mt-24">
         <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-6">
-          <Icon name="heroicons:academic-cap" class="text-blue-500" /> Education
+          <Icon name="heroicons:academic-cap" class="text-orange-500" /> Education
         </h3>
         
         <div class="space-y-8 border-l-2 border-slate-100 ml-3 pl-8 relative">
           <div v-for="(edu, index) in education" :key="index" class="relative">
-            <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-blue-500 shadow-sm"></span>
+            <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white bg-orange-500 shadow-sm"></span>
             
             <h4 class="text-lg font-bold text-slate-900">{{ edu.degree }}</h4>
             <p class="text-slate-700">{{ edu.school }}</p>
@@ -456,7 +449,7 @@ const skills = [
 
       <section id="skills" class="scroll-mt-24">
         <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-6">
-          <Icon name="heroicons:cpu-chip" class="text-blue-500" /> Skills
+          <Icon name="heroicons:cpu-chip" class="text-orange-500" /> Skills
         </h3>
         
         <div class="grid sm:grid-cols-2 gap-6">
