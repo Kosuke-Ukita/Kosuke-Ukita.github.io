@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Personal portfolio website of a PhD candidate.' }
+        { name: 'description', content: 'Personal portfolio website of a graduate student.' }
       ]
     }
   },
