@@ -133,7 +133,7 @@ const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Paper", url: "https://www.dropbox.com/scl/fi/i3yjkrd9lqaybflfzmlss/Poster-Session.xlsx?rlkey=0bntd96bmxtje3f0r04w6yeat&e=1&st=rdyvop6k&dl=0", icon: "heroicons:document-text" },
+      { name: "Workshop", url: "https://www.dropbox.com/scl/fi/i3yjkrd9lqaybflfzmlss/Poster-Session.xlsx?rlkey=0bntd96bmxtje3f0r04w6yeat&e=1&st=rdyvop6k&dl=0", icon: "heroicons:building-library" },
     ]
   },
   {
@@ -265,7 +265,7 @@ const education = [
     description: "GPA: 3.6 / 4.0" 
   },
   { 
-    degree: "BSc in Intelligent Control Systems", 
+    degree: "BSc in Artificial Intelligence", 
     school: "Kyushu Institute of Technology, Computer Science and Systems Engineering", 
     year: "Apr. 2020 - Mar. 2024", 
     description: "GPA: 3.7 / 4.0" 
@@ -291,7 +291,9 @@ const skills = [
     
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
       <div class="max-w-5xl mx-auto px-6 h-16 flex justify-between items-center">
-        <a href="#" class="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">{{ profile.name }}</a>
+        <a href="#" class="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+          <Icon name="heroicons:user" /> {{ profile.name }}
+        </a>
         
         <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
           <a href="#about" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:user" /> About </a>
@@ -363,7 +365,7 @@ const skills = [
         
         <div class="space-y-2">
           <article v-for="(paper, index) in publications" :key="index" 
-                   class="flex flex-col group p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-orange-200 hover:shadow-md transition-all duration-300">
+                   class="flex flex-col group px-6 py-2 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-orange-200 hover:shadow-md transition-all duration-300">
             
             <div class="space-y-1 mb-2">
               <h4 class="text-l font-bold text-slate-900 leading-snug group-hover:text-orange-600 transition-colors">
@@ -377,7 +379,7 @@ const skills = [
               </div>
             </div>
 
-            <div class="border-t border-slate-100 pt-1 mb-2">
+            <div class="border-t border-slate-100 pt-1 mb-1">
               <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
                 <span class="flex items-center gap-1.5">
                   <Icon name="heroicons:calendar" class="w-4 h-4 text-slate-400" />
@@ -394,12 +396,14 @@ const skills = [
                   <span v-if="paper.note" class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-50 text-green-700 border border-green-100">
                     {{ paper.note }}
                   </span>
-                  <a v-for="link in paper.links" :key="link.name" :href="link.url" 
-                    class="flex items-center gap-2 text-sm font-bold text-slate-700 border border-slate-300 px-2 py-1 rounded-lg hover:border-orange-600 hover:text-orange-600 hover:bg-orange-50 transition bg-slate-50">
-                    <Icon :name="link.icon" class="w-4 h-4" />
-                    {{ link.name }}
-                  </a>
                 </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-x-2 gap-y-2 mt-2 text-sm text-slate-500">
+                <a v-for="link in paper.links" :key="link.name" :href="link.url" 
+                  class="flex items-center gap-2 text-sm font-bold text-slate-700 border border-slate-300 px-2 py-1 rounded-lg hover:border-orange-600 hover:text-orange-600 hover:bg-orange-50 transition bg-slate-50">
+                  <Icon :name="link.icon" class="w-4 h-4" />
+                  {{ link.name }}
+                </a>
               </div>
             </div>
 
@@ -478,7 +482,7 @@ const skills = [
       <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="text-center md:text-left">
           <p class="font-bold text-slate-700 text-lg">{{ profile.name }}</p>
-          <p class="text-slate-500 text-sm mt-1">PhD Candidate at Kyushu Institute of Technology</p>
+          <p class="text-slate-500 text-sm mt-1">I love cats.</p>
         </div>
         
         <div class="flex gap-6">
