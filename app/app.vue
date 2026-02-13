@@ -70,8 +70,12 @@ const awards = [
     <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
       <section id="about" class="grid md:grid-cols-4 gap-8 items-start">
         <div class="md:col-span-1">
-          <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto md:mx-0 overflow-hidden">
-             <div class="flex items-center justify-center h-full text-gray-500 text-xs">Photo</div>
+          <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto md:mx-0 overflow-hidden relative shadow-lg">
+            <img 
+              src="/assets/photo.png" 
+              alt="Profile Photo" 
+              class="w-full h-full object-cover" 
+            />
           </div>
         </div>
         <div class="md:col-span-3 space-y-4">
