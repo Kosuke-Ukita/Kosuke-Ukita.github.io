@@ -13,31 +13,43 @@ const profile = {
       name: "GitHub", 
       url: "https://github.com/Kosuke-Ukita", 
       icon: "uil:github", 
-      color: "hover:text-gray-900" 
+      color: "hover:text-gray-300 transition text-sm font-medium" 
     },
     { 
       name: "Hugging Face", 
       url: "https://huggingface.co/sha-ce", 
       icon: "simple-icons:huggingface",
-      color: "hover:text-yellow-500" 
+      color: "hover:text-yellow-500 transition text-sm font-medium" 
     },
     { 
       name: "Google Scholar", 
       url: "https://scholar.google.com/citations?user=rmfjRpEAAAAJ", 
       icon: "simple-icons:googlescholar", 
-      color: "hover:text-blue-600" 
+      color: "hover:text-blue-600 transition text-sm font-medium" 
+    },
+    { 
+      name: "ORCID", 
+      url: "https://orcid.org/0009-0008-3325-1363", 
+      icon: "simple-icons:orcid", 
+      color: "hover:text-green-600 transition text-sm font-medium" 
     },
     { 
       name: "LinkedIn", 
       url: "https://www.linkedin.com/in/ukita000", 
       icon: "uil:linkedin", 
-      color: "hover:text-blue-700" 
+      color: "hover:text-blue-700 transition text-sm font-medium" 
     },
     { 
       name: "X", 
       url: "./", 
       icon: "fa6-brands:x-twitter", 
-      color: "hover:text-black" 
+      color: "hover:text-gray-300 transition text-sm font-medium" 
+    },
+    { 
+      name: "YouTube", 
+      url: "./", 
+      icon: "simple-icons:youtube", 
+      color: "hover:text-red-500 transition text-sm font-medium" 
     },
   ],
 
@@ -309,27 +321,26 @@ const skills = [
         
         <div class="md:col-span-8 space-y-5">
           <div>
-            <h1 class="text-2xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-2">
-              {{ profile.name }}
-            </h1>
+            <h1 class="text-2xl md:text-2xl font-extrabold text-slate-800 tracking-tight mb-2">{{ profile.name }}</h1>
             <p class="text-xl font-bold">浮田 嵩祐</p>
             <p class="text-xl text-orange-600 font-medium">{{ profile.role }}</p>
             <p class="text-slate-500 flex items-center gap-2"><Icon name="heroicons:building-library" /> {{ profile.affiliation }}</p>
-            <p class="text-slate-500 flex items-center gap-2"><Icon name="heroicons:map-pin" />Japan</p>
+            <p class="text-slate-500 flex items-center gap-2"><Icon name="heroicons:map-pin" />Fukuoka, Japan</p>
           </div>
           
-          <p class="leading-relaxed text-slate-600 whitespace-pre-line text-lg">
-            {{ profile.bio }}
-          </p>
+          <p class="leading-relaxed text-slate-600 whitespace-pre-line text-lg">{{ profile.bio }}</p>
           
           <div class="flex flex-wrap gap-3 pt-2">
             <a :href="`mailto:${profile.email}`" class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-700 hover:bg-slate-200 transition text-sm font-medium">
-              <Icon name="heroicons:envelope" class="w-4 h-4" /> Email
+              <Icon name="heroicons:envelope" class="w-4 h-4" /> Email : {{ profile.email }}
             </a>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-2">
             <a v-for="social in profile.socials" :key="social.name" :href="social.url" target="_blank" 
-               class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-700 hover:bg-slate-200 transition text-sm font-medium">
-              <Icon :name="social.icon" class="w-4 h-4" :class="social.color" />
-              {{ social.name }}
+               class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-700"
+               :class="social.color"
+            >
+              <Icon :name="social.icon" class="w-4 h-4" :class="social.color" />{{ social.name }}
             </a>
           </div>
         </div>
@@ -351,15 +362,15 @@ const skills = [
       <section id="publications" class="scroll-mt-24">
         <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-8"><Icon name="heroicons:book-open" class="text-orange-500" /> Publications </h3>
         
-        <div class="space-y-6">
+        <div class="space-y-2">
           <article v-for="(paper, index) in publications" :key="index" 
                    class="flex flex-col group p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-orange-200 hover:shadow-md transition-all duration-300">
             
-            <div class="space-y-3 mb-4">
-              <h4 class="text-xl font-bold text-slate-900 leading-snug group-hover:text-orange-600 transition-colors">
+            <div class="space-y-1 mb-2">
+              <h4 class="text-l font-bold text-slate-900 leading-snug group-hover:text-orange-600 transition-colors">
                 {{ paper.title }}
               </h4>
-              <div class="text-slate-700 text-base">
+              <div class="text-slate-500 text-base">
                 {{ paper.authors }}
               </div>
               <div class="font-semibold text-slate-900 italic">
@@ -367,7 +378,7 @@ const skills = [
               </div>
             </div>
 
-            <div class="border-t border-slate-100 pt-3 mb-4">
+            <div class="border-t border-slate-100 pt-1 mb-2">
               <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
                 <span class="flex items-center gap-1.5">
                   <Icon name="heroicons:calendar" class="w-4 h-4 text-slate-400" />
@@ -384,16 +395,13 @@ const skills = [
                   <span v-if="paper.note" class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-50 text-green-700 border border-green-100">
                     {{ paper.note }}
                   </span>
+                  <a v-for="link in paper.links" :key="link.name" :href="link.url" 
+                    class="flex items-center gap-2 text-sm font-bold text-slate-700 border border-slate-300 px-2 py-1 rounded-lg hover:border-orange-600 hover:text-orange-600 hover:bg-orange-50 transition bg-slate-50">
+                    <Icon :name="link.icon" class="w-4 h-4" />
+                    {{ link.name }}
+                  </a>
                 </div>
               </div>
-            </div>
-
-            <div class="flex flex-wrap gap-3">
-              <a v-for="link in paper.links" :key="link.name" :href="link.url" 
-                 class="flex items-center gap-2 text-sm font-bold text-slate-700 border border-slate-300 px-4 py-2 rounded-lg hover:border-orange-600 hover:text-orange-600 hover:bg-orange-50 transition bg-slate-50">
-                <Icon :name="link.icon" class="w-4 h-4" />
-                {{ link.name }}
-              </a>
             </div>
 
           </article>
