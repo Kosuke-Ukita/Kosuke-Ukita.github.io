@@ -1,10 +1,13 @@
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxt/icon'
+  ],
   app: {
     baseURL: '/Kosuke-Ukita/',
     head: {
-      title: 'Researcher Portfolio',
+      title: 'Kosuke Ukita - Portfolio',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
