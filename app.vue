@@ -36,8 +36,8 @@ const closeMenu = () => { isMenuOpen.value = false }
         </nav>
 
         <button @click="toggleMenu" class="md:hidden text-slate-600 focus:outline-none p-2 rounded-md hover:bg-slate-100 transition">
-          <Icon v-if="isMenuOpen" name="heroicons:x-mark" class="w-6 h-6" />
-          <Icon v-else name="heroicons:bars-3" class="w-6 h-6" />
+          <Icon v-if="isMenuOpen" name="heroicons:x-mark" class="w-4 h-4 flex items-center justify-center" />
+          <Icon v-else name="heroicons:bars-3" class="w-4 h-4 flex items-center justify-center" />
         </button>
       </div>
 
@@ -54,7 +54,7 @@ const closeMenu = () => { isMenuOpen.value = false }
           </NuxtLink>
         </nav>
       </div>
-      </header>
+    </header>
 
     <NuxtPage />
 
