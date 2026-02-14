@@ -5,7 +5,6 @@ import { publications } from '~/data/publications'
 import { awards } from '~/data/awards'
 import { education } from '~/data/education'
 import { skills } from '~/data/skills'
-//import { ref } from 'vue'
 
 const isMenuOpen = ref(false)
 const toggleMenu = () => { isMenuOpen.value = !isMenuOpen.value }
@@ -33,6 +32,9 @@ const closeMenu = () => { isMenuOpen.value = false }
           <NuxtLink to="/cv" class="hover:text-orange-600 transition flex items-center gap-1">
             <Icon name="heroicons:document-text" class="w-4 h-4" /> CV
           </NuxtLink>
+          <NuxtLink to="/Diary" class="hover:text-orange-600 transition flex items-center gap-1">
+            <Icon name="heroicons:pencil" class="w-4 h-4" /> Diary
+          </NuxtLink>
         </nav>
 
         <button @click="toggleMenu" class="md:hidden text-slate-600 focus:outline-none p-2 rounded-md hover:bg-slate-100 transition">
@@ -51,6 +53,9 @@ const closeMenu = () => { isMenuOpen.value = false }
           </NuxtLink>
           <NuxtLink to="/cv" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2">
             <Icon name="heroicons:document-text" class="w-5 h-5" /> CV
+          </NuxtLink>
+          <NuxtLink to="/diary" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-orange-50 hover:text-orange-600 transition flex items-center gap-2">
+            <Icon name="heroicons:pencil-square" class="w-5 h-5" /> Diary
           </NuxtLink>
         </nav>
       </div>
