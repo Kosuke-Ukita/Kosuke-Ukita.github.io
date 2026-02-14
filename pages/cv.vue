@@ -42,7 +42,7 @@ const highlightAuthor = (authors: string) => {
             <Icon name="heroicons:envelope" /> {{ profile.email }}
           </span>
           <a :href="profile.socials.find(s => s.name === 'GitHub')?.url" target="_blank" class="flex items-center gap-1 hover:text-orange-600"><Icon name="uil:github" /></a>
-          <a :href="profile.socials.find(s => s.name === 'Scholar')?.url" target="_blank" class="flex items-center gap-1 hover:text-orange-600"><Icon name="simple-icons:googlescholar" /></a>
+          <a :href="profile.socials.find(s => s.name === 'Google Scholar')?.url" target="_blank" class="flex items-center gap-1 hover:text-orange-600"><Icon name="simple-icons:googlescholar" /></a>
           <a :href="profile.socials.find(s => s.name === 'LinkedIn')?.url" target="_blank" class="flex items-center gap-1 hover:text-orange-600"><Icon name="simple-icons:linkedin" /></a>
         </div>
       </div>

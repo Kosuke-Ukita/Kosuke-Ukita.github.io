@@ -1,5 +1,5 @@
 ---
-title: '論文読み: Inference-Time Scaling for Diffusion Models'
+title: '論文: Inference-Time Scaling for Diffusion Models'
 date: '2026-02-14'
 description: 'Google DeepMind. 生成品質向上のために「推論時間」をどう使うか？ LLMのCoTのようなスケーリング則を拡散モデルで検証した研究．'
 ---

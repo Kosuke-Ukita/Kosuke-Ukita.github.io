@@ -1,5 +1,5 @@
 ---
-title: '論文読み: Flow Straight and Fast'
+title: '論文: Flow Straight and Fast'
 date: '2026-02-07'
 description: '直線的な軌道を持つODEを学習することで，高速かつ高品質な生成・変換を実現するRectified Flowの解説メモ．'
 ---
