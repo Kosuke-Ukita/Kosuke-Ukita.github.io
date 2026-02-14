@@ -37,7 +37,7 @@ import { skills } from '~/data/skills'
         
         <div class="flex gap-6">
           <a v-for="social in profile.socials" :key="social.name" :href="social.url" target="_blank" class="text-slate-400" :class="social.color">
-            <Icon :name="social.icon" class="w-6 h-6" />
+            <Icon :name="social.icon" class="w-4 h-4" />
           </a>
         </div>
 
