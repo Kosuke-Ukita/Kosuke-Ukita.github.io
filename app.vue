@@ -24,7 +24,7 @@ const closeMenu = () => { isMenuOpen.value = false }
           <NuxtLink to="/" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:home" class="w-4 h-4" /> Home </NuxtLink>
           <NuxtLink to="/cv" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:document-text" class="w-4 h-4" /> CV </NuxtLink>
           <NuxtLink to="/publications" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:book-open" class="w-4 h-4" /> Publications </NuxtLink>
-          <NuxtLink to="/Diary" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:pencil" class="w-4 h-4" /> Diary </NuxtLink>
+          <NuxtLink to="/diary" class="hover:text-orange-600 transition flex items-center gap-1"><Icon name="heroicons:pencil" class="w-4 h-4" /> Diary </NuxtLink>
         </nav>
 
         <button @click="toggleMenu" class="md:hidden text-slate-600 focus:outline-none p-2 rounded-md hover:bg-slate-100 transition">

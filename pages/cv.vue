@@ -17,8 +17,9 @@ const highlightAuthor = (authors: string) => {
 <template>
   <div class="min-h-screen bg-white text-slate-800 font-sans selection:bg-orange-100">
     <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+    <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-4"><Icon name="heroicons:document-text" class="text-orange-500" /> CV </h3>
     
-    <header class="flex flex-col sm:flex-row gap-8 items-start border-b-2 border-slate-200 pb-8">
+    <header class="flex flex-col sm:flex-row gap-8 items-start border-b-2 border-slate-100 pb-2">
       <div class="w-32 h-32 rounded-lg overflow-hidden border border-slate-200 shadow-xl shrink-0">
          <img src="/assets/photo.png" alt="Profile" class="w-full h-full object-cover" 
               onerror="this.onerror=null; this.src='https://placehold.co/300x400?text=Photo'"/>
@@ -46,8 +47,6 @@ const highlightAuthor = (authors: string) => {
         </div>
       </div>
     </header>
-
-      <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-4"><Icon name="heroicons:document-text" class="text-orange-500" /> CV </h3>
 
       <section id="education" class="scroll-mt-24">
         <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4">

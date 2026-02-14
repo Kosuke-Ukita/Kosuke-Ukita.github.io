@@ -14,7 +14,7 @@ export const publications = [
     ]
   },
   {
-    title: "High-Performance Self-Supervised Representation Learning by Joint Training of Flow Matching and Representation Encoder",
+    title: "High-Performance Self-Supervised Learning by Joint Training of Flow Matching",
     authors: "Kosuke Ukita, Tsuyoshi Okita",
     venue: "The 29th International Conference on Artificial Intelligence and Statistics (AISTATS 2026)",
     date: "May 2026",
