@@ -13,6 +13,6 @@ export const profile = {
     {name: "Instagram", url: "./", icon: "simple-icons:instagram", color: "hover:text-pink-500 transition"},
     {name: "YouTube", url: "./", icon: "simple-icons:youtube", color: "hover:text-red-500 transition"},
   ],
-  bio: `どうも．浮田 嵩祐です．AIに関する研究をしている大学院生です．
+  bio: `こんにちは．浮田 嵩祐です．AIに関する研究をしている大学院生です．
   生成AIの効率化や基礎理論(e.g. grokking)に興味があります．`
 }
