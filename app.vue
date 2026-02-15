@@ -41,6 +41,7 @@ useHead({
           <NuxtLink to="/cv" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:document-text" class="w-4 h-4" /> CV </NuxtLink>
           <NuxtLink to="/publications" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:book-open" class="w-4 h-4" /> Publications </NuxtLink>
           <NuxtLink to="/memo" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:pencil" class="w-4 h-4" /> Memo </NuxtLink>
+          <NuxtLink to="/programs" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:command-line" class="w-4 h-4" /> Programs </NuxtLink>
         </nav>
 
         <button @click="toggleMenu" class="md:hidden text-slate-600 focus:outline-none p-2 rounded-md hover:bg-slate-100 transition">
@@ -55,6 +56,7 @@ useHead({
           <NuxtLink to="/cv" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:document-text" class="w-5 h-5" /> CV </NuxtLink>
           <NuxtLink to="/publications" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:book-open" class="w-5 h-5" /> Publications </NuxtLink>
           <NuxtLink to="/memo" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:pencil" class="w-5 h-5" /> Memo </NuxtLink>
+          <NuxtLink to="/programs" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:command-line" class="w-5 h-5" /> Programs </NuxtLink>
         </nav>
       </div>
     </header>
