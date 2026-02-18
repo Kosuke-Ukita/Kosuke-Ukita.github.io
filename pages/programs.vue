@@ -20,29 +20,25 @@ import { programs } from '~/data/programs'
       <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-8"><Icon name="heroicons:command-line" class="text-primary" /> Programs </h3>
 
       <div class="grid gap-6">
-      <div v-for="program in programs" :key="program.id" class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:border-primary/60 hover:shadow-lg transition-shadow group">
-      <a :href="program.url" target="_blank" rel="noopener noreferrer" class="block transition-colors">
-      <div class="relative w-full overflow-hidden">
-      <div v-if="program.thumbnail" class="absolute inset-0 bg-slate-100"><img :src="program.thumbnail" :alt="program.title" class="w-full h-full object-cover opacity-25" /></div>
-      <div class="relative p-6 h-full flex flex-col justify-between">
-        <div>
-        <div class="flex items-start justify-between mb-3">
-          <h4 class="text-2xl font-semibold text-slate-900 group-hover:text-primary transition-colors">{{ program.title }}</h4>
-          <a :href="program.githubUrl" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary transition-colors" @click.stop>
-          <Icon name="mdi:github" class="w-6 h-6" />
+        <div v-for="program in programs" :key="program.id" class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:border-primary/60 hover:shadow-lg transition-shadow group">
+          <a :href="program.url" target="_blank" rel="noopener noreferrer" class="block transition-colors">
+            <div class="relative w-full overflow-hidden">
+              <div v-if="program.thumbnail" class="absolute inset-0 bg-slate-100"><img :src="program.thumbnail" :alt="program.title" class="w-full h-full object-cover opacity-25 transition-all duration-300 group-hover:blur-md" /></div>
+                <div class="relative p-6 h-full flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-start justify-between mb-3">
+                      <h4 class="text-2xl font-semibold text-slate-900 group-hover:text-primary transition-colors">{{ program.title }}</h4>
+                      <a :href="program.githubUrl" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary transition-colors" @click.stop><Icon name="mdi:github" class="w-6 h-6" /></a>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 group-hover:text-slate-900">{{ program.description }}</p>
+                  </div>
+                  <div class="flex flex-wrap gap-2">
+                  <span v-for="tag in program.tags" :key="tag" class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">{{ tag }}</span>
+                </div>
+              </div>
+            </div>
           </a>
         </div>
-        <p class="text-sm text-slate-600 mb-4">{{ program.description }}</p>
-        </div>
-      <div class="flex flex-wrap gap-2">
-        <span v-for="tag in program.tags" :key="tag" class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">
-        {{ tag }}
-        </span>
-      </div>
-      </div>
-      </div>
-      </a>
-      </div>
       </div>
     </section>
 
