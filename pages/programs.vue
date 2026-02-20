@@ -7,7 +7,7 @@ import { programs } from '~/data/programs'
   <main class="max-w-5xl mx-auto">
     
     <div class="flex items-center gap-6 mb-12 border-b border-slate-100 pt-10 pb-8 px-6">
-      <div class="w-20 h-20 rounded-full overflow-hidden shadow-xl border-2 border-slate-100 shrink-0">
+      <div class="w-20 h-20 rounded-full overflow-hidden shadow-xl shrink-0">
         <img src="/assets/photo.jpg" alt="Profile" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Photo'"/>
       </div>
       

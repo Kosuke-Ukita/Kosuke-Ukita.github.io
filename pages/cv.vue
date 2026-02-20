@@ -20,7 +20,7 @@ const highlightAuthor = (authors: string) => {
     <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-4"><Icon name="heroicons:document-text" class="text-primary" /> CV </h3>
     
     <header class="flex flex-col sm:flex-row gap-8 items-start border-b-2 border-slate-100 pb-2">
-      <div class="w-32 h-32 rounded-lg overflow-hidden border border-slate-200 shadow-xl shrink-0">
+      <div class="w-32 h-32 rounded-lg overflow-hidden shadow-xl shrink-0">
          <img src="/assets/photo.jpg" alt="Profile" class="w-full h-full object-cover" 
               onerror="this.onerror=null; this.src='https://placehold.co/300x400?text=Photo'"/>
       </div>
@@ -89,7 +89,7 @@ const highlightAuthor = (authors: string) => {
         
         <div class="space-y-2">
           <article v-for="(paper, index) in publications" :key="index" 
-                   class="flex flex-col group px-6 py-2 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                   class="flex flex-col group px-6 py-2 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
             
             <div class="space-y-1 mb-2">
               <h4 class="text-l font-bold text-slate-900 leading-snug group-hover:text-primary transition-colors">
@@ -141,7 +141,7 @@ const highlightAuthor = (authors: string) => {
         </h3>
         
         <div class="space-y-4">
-          <div v-for="(award, index) in awards" :key="index" class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:border-primary/20 hover:shadow-md transition flex items-center gap-4">            
+          <div v-for="(award, index) in awards" :key="index" class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition flex items-center gap-4">            
             <div>
               <a :href="award.url" target="_blank" rel="noopener noreferrer" class="block">
                 <p class="font-bold text-slate-900 text-sm leading-tight underline hover:text-primary">{{ award.title }}</p>

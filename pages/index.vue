@@ -78,7 +78,7 @@ const highlightAuthor = (authors: string) => {
         
         <div class="space-y-2">
           <article v-for="(paper, index) in publications.slice(0, 3)" :key="index"
-                class="flex flex-col group px-6 py-2 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                class="flex flex-col group px-6 py-2 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
                 
                 <div class="space-y-1 mb-2">
                   <h4 class="text-l font-bold text-slate-900 leading-snug group-hover:text-primary transition-colors">
@@ -130,7 +130,7 @@ const highlightAuthor = (authors: string) => {
         </h3>
         
         <div class="space-y-4">
-          <div v-for="(award, index) in awards" :key="index" class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:border-primary/20 hover:shadow-md transition flex items-center gap-4">
+          <div v-for="(award, index) in awards" :key="index" class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition flex items-center gap-4">
             <div>
               <a :href="award.url" target="_blank" rel="noopener noreferrer" class="block">
                 <p class="font-bold text-slate-900 text-sm leading-tight underline hover:text-primary">{{ award.title }}</p>

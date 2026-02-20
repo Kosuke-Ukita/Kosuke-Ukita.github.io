@@ -65,7 +65,7 @@ export const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Workshop", url: "https://www.dropbox.com/scl/fi/i3yjkrd9lqaybflfzmlss/Poster-Session.xlsx?rlkey=0bntd96bmxtje3f0r04w6yeat&e=1&st=rdyvop6k&dl=0", icon: "heroicons:building-library" },
+      { name: "Page", url: "https://www.dropbox.com/scl/fi/i3yjkrd9lqaybflfzmlss/Poster-Session.xlsx?rlkey=0bntd96bmxtje3f0r04w6yeat&e=1&st=rdyvop6k&dl=0", icon: "heroicons:link" },
     ]
   },
   {
@@ -92,7 +92,7 @@ export const publications = [
     tags: [""],
     links: [
       { name: "Paper", url: "https://kyutech.repo.nii.ac.jp/record/2001921/files/10463229.pdf", icon: "heroicons:document-text" },
-      { name: "Workshop", url: "https://mbl.ipsj.or.jp/program/2025/114/", icon: "heroicons:building-library" },
+      { name: "Page", url: "https://mbl.ipsj.or.jp/program/2025/114/", icon: "heroicons:link" },
     ]
   },
   {
@@ -105,7 +105,7 @@ export const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Workshop", url: "https://conferenceservice.jp/www/saes2024/", icon: "heroicons:building-library" },
+      { name: "Page", url: "https://conferenceservice.jp/www/saes2024/", icon: "heroicons:link" },
     ]
   },
   {
@@ -118,7 +118,7 @@ export const publications = [
     note: "Non-refeered",
     tags: [""],
     links: [
-      { name: "Workshop", url: "https://conferenceservice.jp/www/saes2024/", icon: "heroicons:building-library" },
+      { name: "Page", url: "https://conferenceservice.jp/www/saes2024/", icon: "heroicons:link" },
     ]
   },
   {
