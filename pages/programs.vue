@@ -19,26 +19,51 @@ import { programs } from '~/data/programs'
     <section id="programs" class="scroll-mt-24">
       <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-8"><Icon name="heroicons:command-line" class="text-primary" /> Programs </h3>
 
-      <div class="grid gap-6">
-        <div v-for="program in programs" :key="program.id" class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:border-primary/60 hover:shadow-lg transition-shadow group">
-          <a :href="program.url" target="_blank" rel="noopener noreferrer" class="block transition-colors">
-            <div class="relative w-full overflow-hidden">
-              <div v-if="program.thumbnail" class="absolute inset-0 bg-slate-100"><img :src="program.thumbnail" :alt="program.title" class="w-full h-full object-cover opacity-25 transition-all duration-300 group-hover:blur-md" /></div>
-                <div class="relative p-6 h-full flex flex-col justify-between">
-                  <div>
-                    <div class="flex items-start justify-between mb-3">
-                      <h4 class="text-2xl font-semibold text-slate-900 group-hover:text-primary transition-colors">{{ program.title }}</h4>
-                      <a :href="program.githubUrl" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary transition-colors" @click.stop><Icon name="mdi:github" class="w-6 h-6" /></a>
-                    </div>
-                    <p class="text-sm text-slate-600 mb-4 group-hover:text-slate-900">{{ program.description }}</p>
-                  </div>
-                  <div class="flex flex-wrap gap-2">
-                  <span v-for="tag in program.tags" :key="tag" class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">{{ tag }}</span>
-                </div>
-              </div>
-            </div>
-          </a>
+
+      <div v-for="program in programs" :key="program.id"
+        class="overflow-hidden transition-all duration-500 group relative backdrop-blur-md bg-white/80 hover:backdrop-blur-xl hover:bg-white/50">
+        
+        <!-- Background thumbnail with gradient fade -->
+        <div v-if="program.thumbnail" class="absolute inset-0 -z-10 width=150%">
+          <img :src="program.thumbnail" :alt="program.title"
+            class="w-full h-full object-cover opacity-90 scale-105 transition-all duration-500 group-hover:opacity-40 group-hover:blur-sm" />
+          <!-- Gradient overlay: transparent center → page background edges -->
+          <div class="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
+          <!-- <div class="absolute inset-0 bg-gradient-to-l from-white via-transparent to-white"></div> -->
         </div>
+
+        <!-- Liquid glass highlight layer -->
+        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-white/10 via-white/5 to-transparent pointer-events-none transition-all duration-500 group-hover:from-white/10 group-hover:via-white/50"></div>
+
+        <a :href="program.url" target="_blank" rel="noopener noreferrer" class="block">
+        <div class="relative p-6 flex flex-col gap-3">
+          <div class="flex flex-col gap-8
+               px-3 py-3 rounded-xl
+               bg-white/10 backdrop-blur-sm
+               shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_12px_rgba(0,0,0,0.15)]
+               border border-white/20
+               group-hover:bg-white/20 group-hover:border-white/30
+               transition-all duration-300">
+            <div class="flex items-start justify-between">
+              <h4 class="text-xl font-semibold text-black/40 drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)] group-hover:drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] group-hover:text-black/80 transition-all duration-300">
+              {{ program.title }}
+              </h4>
+            <a :href="program.githubUrl" target="_blank" rel="noopener noreferrer"
+               class="text-black/40 hover:text-black transition-colors drop-shadow-md ml-3 shrink-0"
+               @click.stop>
+              <Icon name="mdi:github" class="w-6 h-6" />
+            </a>
+            </div>
+
+            <p class="text-sm
+              text-black/40 drop-shadow-sm
+              group-hover:text-black/80 group-hover:drop-shadow-lg
+              transition-all duration-300 leading-relaxed">
+            {{ program.description }}
+            </p>
+          </div>
+        </div>
+        </a>
       </div>
     </section>
 
