@@ -12,9 +12,9 @@ const closeMenu = () => { isMenuOpen.value = false }
 useSeoMeta({
   title: 'Kosuke Ukita',
   ogTitle: 'Kosuke Ukita',
-  description: 'Graduate Student / Researcher in Generative AI.',
-  ogDescription: 'Graduate Student / Researcher in Generative AI.',
-  ogImage: 'https://Kosuke-Ukita.github.io/Kosuke-Ukita/public/favicon.ico',
+  description: profile.bio,
+  ogDescription: profile.bio,
+  ogImage: 'https://Kosuke-Ukita.github.io/Kosuke-Ukita/public/assets/photo.jpg',
   twitterCard: 'summary_large_image',
 })
 useHead({
