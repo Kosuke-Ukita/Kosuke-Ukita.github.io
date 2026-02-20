@@ -143,7 +143,9 @@ const highlightAuthor = (authors: string) => {
         <div class="space-y-4">
           <div v-for="(award, index) in awards" :key="index" class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:border-primary/20 hover:shadow-md transition flex items-center gap-4">            
             <div>
-              <p class="font-bold text-slate-900 text-sm leading-tight">{{ award.title }}</p>
+              <a :href="award.url" target="_blank" rel="noopener noreferrer" class="block">
+                <p class="font-bold text-slate-900 text-sm leading-tight underline hover:text-primary">{{ award.title }}</p>
+              </a>
               <div class="flex flex-wrap items-center gap-x-2 text-sm text-slate-600 mt-1">
                 <span>{{ award.organization }}</span>
                 <span class="text-slate-300 hidden sm:inline">|</span>

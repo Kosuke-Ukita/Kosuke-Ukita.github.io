@@ -25,17 +25,15 @@ import { programs } from '~/data/programs'
         </div>
         
         <div class="relative px-8 py-4 flex flex-col gap-3">
-          <a :href="program.url" target="_blank" rel="noopener noreferrer" class="block">
-            <div class="flex flex-col gap-8 p-6 rounded-lg bg-white/5 backdrop-blur-none border border-white/20
-                shadow-[inset_0_2px_0_rgba(255,255,255,0.3),0_4px_12px_rgba(0,0,0,0.15)]
-                group-hover:backdrop-blur-sm transition-all duration-300">
-              <div class="flex items-start justify-between">
-                <h4 class="text-xl font-semibold text-black/80 text-shadow-md group-hover:drop-shadow-lg group-hover:text-black transition-all duration-300">{{ program.title }}</h4>
-                <a :href="program.githubUrl" target="_blank" rel="noopener noreferrer" class="text-black/40 hover:text-black transition-colors drop-shadow-md ml-3 shrink-0" @click.stop><Icon name="mdi:github" class="w-6 h-6" /></a>
-              </div>
-              <p class="text-sm text-black/80 text-shadow-md leading-relaxed group-hover:text-shadow-lg group-hover:text-black transition-all duration-300">{{ program.description }}</p>
+          <div class="flex flex-col gap-8 p-6 rounded-lg bg-white/5 backdrop-blur-none border border-white/20 shadow-[inset_0_2px_0_rgba(255,255,255,0.3),0_4px_12px_rgba(0,0,0,0.15)] group-hover:backdrop-blur-sm transition-all duration-300">
+            <div class="flex items-start justify-between">
+              <a :href="program.url" target="_blank" rel="noopener noreferrer" class="block">
+                <h4 class="text-xl font-semibold text-black text-shadow-md underline group-hover:drop-shadow-lg hover:text-primary transition-all duration-300">{{ program.title }}</h4>
+              </a>
+              <a :href="program.githubUrl" target="_blank" rel="noopener noreferrer" class="text-black/80 hover:text-primary transition-colors drop-shadow-md ml-3 shrink-0" @click.stop><Icon name="mdi:github" class="w-6 h-6" /></a>
             </div>
-          </a>
+            <p class="text-sm text-black/80 text-shadow-md leading-relaxed group-hover:text-shadow-lg group-hover:text-black transition-all duration-300">{{ program.description }}</p>
+          </div>
         </div>
       </div>
     </section>
