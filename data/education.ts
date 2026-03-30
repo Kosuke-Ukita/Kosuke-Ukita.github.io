@@ -1,17 +1,17 @@
 export const education = [
-//   { 
-//     degree: "PhD in CSE", 
-//     school: "Kyushu Institute of Technology", 
-//     depart: "Graduate School of Computer Science and Systems Engineering, Department of Computer Science and Systems Engineering"
-//     year: "Apr. 2026 - Present", 
-//     description: "Advisor: Assoc. Prof. Tsuyoshi Okita" 
-//   },
+  { 
+    degree: "PhD in CSE", 
+    school: "Kyushu Institute of Technology", 
+    depart: "Department of Creative Informatics, Graduate School of Computer Science and Systems Engineering",
+    year: "Apr. 2026 - Present", 
+    description: "Advisor: Assoc. Prof. Tsuyoshi Okita" 
+  },
   { 
     degree: "MSc in CSE", 
     school: "Kyushu Institute of Technology", 
     depart: "Department of Creative Informatics, Graduate School of Computer Science and Systems Engineering",
     thesis: "A Study on Sensor Foundation Models via Joint Training using Flow Matching", //「フローマッチングを用いた共同学習によるセンサ基盤モデルに関する研究」
-    year: "Apr. 2024 - Mar. 2026 (expected)", 
+    year: "Apr. 2024 - Mar. 2026", 
     description: "GPA: 3.6 / 4.0" 
   },
   { 

@@ -2,6 +2,7 @@
 import { profile } from '~/data/profile'
 import { publications } from '~/data/publications'
 import { awards } from '~/data/awards'
+import { grants } from '~/data/grants'
 import { education } from '~/data/education'
 import { experience } from '~/data/experience'
 import { others } from '~/data/others'
@@ -120,6 +121,28 @@ const highlightAuthor = (authors: string) => {
             </div>
 
           </article>
+        </div>
+      </section>
+      
+      <section id="grants" class="scroll-mt-24">
+        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4">
+          <Icon name="heroicons:currency-dollar" class="text-primary" /> Grants
+        </h3>
+        
+        <div class="space-y-4">
+          <div v-for="(grant, index) in grants" :key="index" class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition flex items-center gap-4">            
+            <div>
+              <a :href="grant.url" target="_blank" rel="noopener noreferrer" class="block">
+                <p class="font-bold text-slate-900 text-sm leading-tight underline hover:text-primary">{{ grant.name }}</p>
+              </a>
+              <div class="flex flex-wrap items-center gap-x-2 text-sm text-slate-600 mt-1">
+                <span>{{ grant.organization }}</span>
+                <span class="text-slate-300 hidden sm:inline">|</span>
+                <span class="text-slate-500 text-sm">{{ grant.year }}</span>
+              </div>
+            </div>
+            
+          </div>
         </div>
       </section>
 
