@@ -1,5 +1,11 @@
 export const awards = [
   {
+    title: "2026 PAKDD Student Travel Award",
+    url: "https://www.pakdd2026.org/awardees",
+    organization: "The 30th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2026)",
+    year: "June 2026"
+  },
+  {
     title: "Spotlight Presentation (Top 3%)",
     url: "https://openreview.net/forum?id=yW5dvLytON",
     organization: "The 29th Annual Conference on Artificial Intelligence and Statistics (AISTATS 2026)",
