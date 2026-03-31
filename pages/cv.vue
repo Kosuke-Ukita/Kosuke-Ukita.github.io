@@ -137,6 +137,7 @@ const highlightAuthor = (authors: string) => {
               </a>
               <div class="flex flex-wrap items-center gap-x-2 text-sm text-slate-600 mt-1">
                 <span>{{ grant.organization }}</span>
+                <span class="text-xs text-slate-400 bg-slate-50 inline-block p-1 my-0 rounded">{{ grant.description }}</span>
                 <span class="text-slate-300 hidden sm:inline">|</span>
                 <span class="text-slate-500 text-sm">{{ grant.year }}</span>
               </div>
