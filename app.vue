@@ -55,7 +55,7 @@ useHead({
           <NuxtLink to="/" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:home" class="w-5 h-5" /> Home </NuxtLink>
           <NuxtLink to="/cv" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:document-text" class="w-5 h-5" /> CV </NuxtLink>
           <NuxtLink to="/publications" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:book-open" class="w-5 h-5" /> Publications </NuxtLink>
-          <NuxtLink to="/memo" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:pencil" class="w-5 h-5" /> Memo </NuxtLink>
+          <!-- <NuxtLink to="/memo" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:pencil" class="w-5 h-5" /> Memo </NuxtLink> -->
           <NuxtLink to="/programs" @click="closeMenu" class="block py-3 px-4 rounded-lg hover:bg-primary/5 hover:text-primary transition flex items-center gap-2"><Icon name="heroicons:command-line" class="w-5 h-5" /> Programs </NuxtLink>
         </nav>
       </div>
