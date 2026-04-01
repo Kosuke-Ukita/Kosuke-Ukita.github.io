@@ -37,7 +37,7 @@ const highlightAuthor = (authors: string) => {
         </h1>
         
         <div class="text-slate-500 space-y-1">
-          <p class="text-base font-bold text-primary">MSc student (M2), full-time </p>
+          <p class="text-base font-bold text-primary"> {{ profile.grade }} </p>
           <p class="text-slate-500 flex items-center gap-2"><Icon name="heroicons:building-library" /> {{ profile.affiliation }} </p>
           <p class="text-sm">Department of Creative Informatics, Graduate School of Computer Science and Systems Engineering</p>
           <!-- <p class="text-sm">Gender: Male</p> -->
@@ -68,8 +68,8 @@ const highlightAuthor = (authors: string) => {
             </div>
             <p class="text-slate-500">{{ edu.school }}</p>
             <p v-if="edu.depart" class="text-sm text-slate-500">{{ edu.depart }}</p>
-            <p v-if="edu.thesis" class="text-sm text-slate-500">Thesis: "{{ edu.thesis }}"</p>
-            <p v-if="edu.description" class="text-xs text-slate-400 bg-slate-50 inline-block p-1 my-0 rounded">{{ edu.description }}</p>
+            <p v-if="edu.thesis" class="text-xs text-slate-500 bg-slate-100 inline-block p-1 my-0 rounded">Thesis: "{{ edu.thesis }}", </p>
+            <p v-if="edu.description" class="text-xs text-slate-500 bg-slate-100 inline-block p-1 my-0 rounded">{{ edu.description }}</p>
           </div>
         </div>
       </section>

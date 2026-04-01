@@ -40,7 +40,7 @@ useHead({
           <NuxtLink to="/" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:home" class="w-4 h-4" /> Home </NuxtLink>
           <NuxtLink to="/cv" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:document-text" class="w-4 h-4" /> CV </NuxtLink>
           <NuxtLink to="/publications" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:book-open" class="w-4 h-4" /> Publications </NuxtLink>
-          <NuxtLink to="/memo" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:pencil" class="w-4 h-4" /> Memo </NuxtLink>
+          <!-- <NuxtLink to="/memo" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:pencil" class="w-4 h-4" /> Memo </NuxtLink> -->
           <NuxtLink to="/programs" class="hover:text-primary transition flex items-center gap-1"><Icon name="heroicons:command-line" class="w-4 h-4" /> Programs </NuxtLink>
         </nav>
 

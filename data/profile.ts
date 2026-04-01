@@ -1,6 +1,7 @@
 export const profile = {
   name: "Kosuke Ukita",
-  role: "MSc student / Researcher",
+  role: "PhD student / Researcher",
+  grade: "PhD student (D1), full-time",
   affiliation: "Kyushu Institute of Technology",
   email: "ukita.kosuke299[at]mail.kyutech.jp", 
   socials: [

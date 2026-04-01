@@ -3,8 +3,9 @@ export const education = [
     degree: "PhD in CSE", 
     school: "Kyushu Institute of Technology", 
     depart: "Department of Creative Informatics, Graduate School of Computer Science and Systems Engineering",
+    thesis: "",
     year: "Apr. 2026 - Present", 
-    description: "Advisor: Assoc. Prof. Tsuyoshi Okita" 
+    // description: "Advisor: Assoc. Prof. Tsuyoshi Okita" 
   },
   { 
     degree: "MSc in CSE", 
