@@ -112,7 +112,9 @@ const toggleDark = () => {
 
     <!-- ── Mobile top bar ─────────────────────────────────────────────────── -->
     <header class="md:hidden sticky top-0 z-10 bg-white/95 dark:bg-zinc-900/95 backdrop-blur border-b border-gray-100 dark:border-zinc-800 h-11 flex items-center justify-between px-4">
-      <span class="font-mono font-semibold text-sm text-gray-900 dark:text-zinc-100 tracking-tight">Kosuke Ukita</span>
+      <button @click="toggleMenu">
+        <span class="font-mono font-semibold text-sm text-gray-900 dark:text-zinc-100 tracking-tight">Kosuke Ukita</span>
+      </button>
       <div class="flex items-center gap-1">
         <button
           @click="toggleDark"

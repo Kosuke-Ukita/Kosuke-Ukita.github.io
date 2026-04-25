@@ -54,13 +54,13 @@ const linkIcon = (name: string, dataIcon?: string): string => {
     <section>
       <h2 class="section-title">Education</h2>
       <div class="space-y-5">
-        <div v-for="(edu, i) in education" :key="i" class="flex flex-col sm:flex-row gap-0.5 sm:gap-6 text-sm">
-          <span class="font-mono text-gray-500 dark:text-zinc-400 text-[0.72rem] sm:shrink-0 sm:w-44 sm:pt-0.5">{{ edu.year }}</span>
+        <div v-for="(edu, i) in education" :key="i" class="flex flex-col sm:flex-row gap-0.5 sm:gap-4 text-sm">
+          <span class="font-mono text-gray-500 dark:text-zinc-400 text-[0.72rem] sm:shrink-0 sm:w-40 sm:pt-0.5">{{ edu.year }}</span>
           <div>
             <p class="font-semibold text-gray-900 dark:text-zinc-100">{{ edu.degree }}</p>
             <p class="text-gray-700 dark:text-zinc-300 text-xs mt-0.5">{{ edu.school }}</p>
             <p v-if="edu.depart" class="text-[0.7rem] text-gray-500 dark:text-zinc-400 mt-0.5 pl-0.5 leading-snug whitespace-pre-line">{{ edu.depart }}</p>
-            <p v-if="edu.thesis" class="font-mono text-[0.72rem] text-gray-500 dark:text-zinc-400 mt-1 leading-snug">{{ edu.thesis }}</p>
+            <p v-if="edu.thesis" class="font-mono text-[0.72rem] text-gray-500 dark:text-zinc-400 mt-1 leading-snug underline">{{ edu.thesis }}</p>
             <p v-if="edu.description" class="text-[0.72rem] text-gray-500 dark:text-zinc-400 mt-0.5 font-mono">{{ edu.description }}</p>
           </div>
         </div>
@@ -71,8 +71,8 @@ const linkIcon = (name: string, dataIcon?: string): string => {
     <section>
       <h2 class="section-title">Work Experience</h2>
       <div class="space-y-5">
-        <div v-for="(exp, i) in experience" :key="i" class="flex flex-col sm:flex-row gap-0.5 sm:gap-6 text-sm">
-          <span class="font-mono text-gray-500 dark:text-zinc-400 text-[0.72rem] sm:shrink-0 sm:w-44 sm:pt-0.5">{{ exp.year }}</span>
+        <div v-for="(exp, i) in experience" :key="i" class="flex flex-col sm:flex-row gap-0.5 sm:gap-4 text-sm">
+          <span class="font-mono text-gray-500 dark:text-zinc-400 text-[0.72rem] sm:shrink-0 sm:w-40 sm:pt-0.5">{{ exp.year }}</span>
           <div>
             <p class="font-semibold text-gray-900 dark:text-zinc-100">{{ exp.name }}</p>
             <p v-for="(d, j) in exp.descriptions" :key="j" class="text-[0.72rem] text-gray-500 dark:text-zinc-400 mt-0.5">{{ d }}</p>
@@ -128,7 +128,7 @@ const linkIcon = (name: string, dataIcon?: string): string => {
     <section id="grants">
       <h2 class="section-title">Grants</h2>
       <ul class="space-y-4">
-        <li v-for="(grant, i) in grants" :key="i" class="flex flex-col sm:flex-row gap-0.5 sm:gap-2 text-sm">
+        <li v-for="(grant, i) in grants" :key="i" class="flex gap-1 text-sm">
           <span class="text-gray-300 dark:text-zinc-600 shrink-0 mt-0.5 select-none">–</span>
           <div>
             <p><a :href="grant.url" target="_blank" rel="noopener" class="font-medium text-gray-800 dark:text-zinc-200 dark:hover:text-primary hover:text-primary transition-colors">{{ grant.name }}</a></p>
@@ -143,7 +143,7 @@ const linkIcon = (name: string, dataIcon?: string): string => {
     <section id="awards">
       <h2 class="section-title">Awards</h2>
       <ul class="space-y-4">
-        <li v-for="(award, i) in awards" :key="i" class="flex flex-col sm:flex-row gap-0.5 sm:gap-2 text-sm">
+        <li v-for="(award, i) in awards" :key="i" class="flex gap-1 text-sm">
           <span class="text-gray-300 dark:text-zinc-600 shrink-0 mt-0.5 select-none">–</span>
           <div>
             <a :href="award.url" target="_blank" rel="noopener" class="font-medium text-gray-800 dark:text-zinc-200 dark:hover:text-primary hover:text-primary transition-colors">{{ award.title }}</a>

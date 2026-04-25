@@ -129,7 +129,7 @@ const recentAwards = awards.slice(0, 5)
     <section v-if="recentGrants.length">
       <h2 class="section-title">Grants</h2>
       <ul class="space-y-4">
-        <li v-for="(grant, i) in recentGrants" :key="i" class="flex gap-2 text-sm">
+        <li v-for="(grant, i) in recentGrants" :key="i" class="flex gap-1 text-sm">
           <span class="text-gray-300 dark:text-zinc-600 shrink-0 mt-0.5 select-none">–</span>
           <div>
             <p><a :href="grant.url" target="_blank" rel="noopener" class="font-medium text-gray-800 dark:text-zinc-200 dark:hover:text-primary hover:text-primary transition-colors">{{ grant.name }}</a></p>
@@ -149,7 +149,7 @@ const recentAwards = awards.slice(0, 5)
     <section v-if="recentAwards.length">
       <h2 class="section-title">Awards</h2>
       <ul class="space-y-4">
-        <li v-for="(award, i) in recentAwards" :key="i" class="flex gap-2 text-sm">
+        <li v-for="(award, i) in recentAwards" :key="i" class="flex gap-1 text-sm">
           <span class="text-gray-300 dark:text-zinc-600 shrink-0 mt-0.5 select-none">–</span>
           <div>
             <a :href="award.url" target="_blank" rel="noopener" class="font-medium text-gray-800 dark:text-zinc-200 dark:hover:text-primary hover:text-primary transition-colors">{{ award.title }}</a>
