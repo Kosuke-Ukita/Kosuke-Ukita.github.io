@@ -1,59 +1,109 @@
 <script setup lang="ts">
-import { profile } from '~/data/profile'
 import { publications } from '~/data/publications'
 
-const highlightAuthor = (authors: string) => {
-  return authors
-    .replace(/Kosuke Ukita/g, `<span class="underline">Kosuke Ukita</span>`)
-    .replace(/浮田嵩祐/g, `<span class="underline">浮田嵩祐</span>`);
+useHead({ title: 'Publications' })
+
+const highlightAuthor = (authors: string) =>
+  authors
+    .replace(/Kosuke Ukita/g, `<strong>Kosuke Ukita</strong>`)
+    .replace(/浮田嵩祐/g, `<strong>浮田嵩祐</strong>`)
+
+// Extract year from date strings like "June 2026", "October 2025", etc.
+const extractYear = (date?: string) => date?.trim().split(/\s+/).pop() ?? '—'
+
+// Map link name → icon (falls back to data icon, then generic)
+const linkIcon = (name: string, dataIcon?: string): string => {
+  const map: Record<string, string> = {
+    PDF:    'heroicons:document-text',
+    Code:   'heroicons:code-bracket-square',
+    Page:   'heroicons:arrow-top-right-on-square',
+    Arxiv:  'heroicons:document-magnifying-glass',
+    Slides: 'heroicons:presentation-chart-bar',
+    Video:  'heroicons:video-camera',
+    Demo:   'heroicons:play-circle',
+    Poster: 'heroicons:photo',
+  }
+  return map[name] || dataIcon || 'heroicons:link'
 }
+
+type PubWithIndex = typeof publications[0] & { globalIndex: number }
+
+const groupedPublications = computed(() => {
+  const map: Record<string, PubWithIndex[]> = {}
+  publications.forEach((pub, i) => {
+    const year = extractYear(pub.date)
+    if (!map[year]) map[year] = []
+    map[year].push({ ...pub, globalIndex: i + 1 })
+  })
+  return Object.entries(map)
+    .sort(([a], [b]) => Number(b) - Number(a))
+    .map(([year, pubs]) => ({ year, pubs }))
+})
 </script>
 
 <template>
-  <main class="max-w-5xl mx-auto px-6 py-10">
-    
-    <div class="flex items-center gap-6 mb-12 border-b border-slate-100 pb-8">
-      <div class="w-20 h-20 rounded-full overflow-hidden shadow-xl shrink-0">
-        <img src="/assets/photo.jpg" alt="Profile" class="w-full h-full object-cover" 
-             onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Photo'"/>
-      </div>
-      
-      <div>
-        <h1 class="text-2xl font-bold text-slate-900">{{ profile.name }}</h1>
-        <p class="text-slate-500 text-sm flex items-center gap-2"><Icon name="heroicons:academic-cap" /> {{ profile.role }}</p>
-      </div>
-    </div>
-    <section id="publications" class="scroll-mt-24">
-        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4"><Icon name="heroicons:book-open" class="text-primary" /> Publications </h3>
-        
-        <div class="space-y-2 ml-0 pl-2 relative">
-          <!-- <article v-for="(paper, index) in publications" :key="index" class="flex flex-col group px-6 py-2 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300"> -->
-          <article v-for="(paper, index) in publications" :key="index" class="relative group border-l-2 border-primary/50 px-3 py-2 rounded-md hover:shadow-md transition-all duration-300">
-            <p class="absolute -left-[32px] text-sm text-primary/90 font-bold">[{{ index+1 }}]</p>
-            
-            <div class="flex justify-between">
-              <h4 class="text-md font-bold text-slate-900 leading-snug group-hover:text-primary transition-colors">{{ paper.title }}</h4>
-              <div class="flex gap-1 shrink-0 self-start">
-                <span v-if="paper.type" class="inline-flex items-center px-1 py-0.5 rounded text-xs font-medium bg-primary/5 text-primary border border-primary/10 whitespace-nowrap">{{ paper.type }}</span>
-                <span v-if="paper.note" class="inline-flex items-center px-1 py-0.5 rounded text-xs font-medium bg-green-50 text-green-700 border border-green-100 whitespace-nowrap">{{ paper.note }}</span>
-              </div>
-            </div>
-            <div class="text-slate-500 text-sm"><span v-html="highlightAuthor(paper.authors)"></span></div>
-            <div class="text-xs font-semibold text-slate-900 italic">{{ paper.venue }}</div>
+  <div>
+    <h1 class="font-mono font-semibold text-gray-900 dark:text-zinc-100 text-xl tracking-tight mb-10">Publications</h1>
 
-            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500 border-t border-slate-100 pt-1 mb-1">
-              <span class="text-xs flex items-center gap-1"><Icon name="heroicons:calendar" class="w-4 h-4 text-slate-400" />{{ paper.date }}</span>
-              <span class="text-xs flex items-center gap-1" v-if="paper.location"><Icon name="heroicons:map-pin" class="w-4 h-4 text-slate-400" />{{ paper.location }}</span>
-            </div>
-            <div class="flex flex-wrap items-center gap-1 mt-1text-slate-500">
-              <a v-for="link in paper.links" :key="link.name" :href="link.url" class="flex items-center gap-1 text-xs font-bold text-slate-700 border border-slate-300 px-2 py-1 rounded-lg hover:border-primary hover:text-primary hover:bg-primary/5 transition bg-slate-50">
-                <Icon :name="link.icon" class="w-4 h-4" />{{ link.name }}
+    <div v-for="group in groupedPublications" :key="group.year" class="mb-12">
+
+      <!-- Year header -->
+      <h2 class="font-mono text-sm font-semibold text-primary pb-2 mb-7 border-b border-gray-100 dark:border-zinc-800">
+        {{ group.year }}
+      </h2>
+
+      <ol class="space-y-8">
+        <li v-for="paper in group.pubs" :key="paper.globalIndex" class="flex gap-4">
+          <span class="pub-number">[{{ paper.globalIndex }}]</span>
+
+          <div class="min-w-0 flex-1">
+            <!-- Title -->
+            <p class="pub-title text-sm leading-snug">{{ paper.title }}</p>
+
+            <!-- Authors -->
+            <p class="pub-authors" v-html="highlightAuthor(paper.authors)" />
+
+            <!-- Venue -->
+            <p class="pub-venue">
+              {{ paper.venue }}<span v-if="paper.date">, {{ paper.date }}</span>
+              <span v-if="paper.location" class="not-italic text-gray-400 dark:text-zinc-500"> &middot; {{ paper.location }}</span>
+            </p>
+
+            <!-- Tags, refereed status, and link icons -->
+            <div class="flex flex-wrap items-center gap-2 mt-2">
+              <!-- Presentation type badge -->
+              <span
+                v-if="paper.type"
+                class="font-mono text-[0.65rem] border px-1.5 py-0.5 rounded-sm"
+                :class="['Spotlight', 'Oral'].includes(paper.type)
+                  ? 'text-primary border-primary/40'
+                  : 'text-gray-500 dark:text-zinc-400 border-gray-300 dark:border-zinc-600'"
+              >{{ paper.type }}</span>
+
+              <!-- Refereed status (always shown) -->
+              <span
+                class="font-mono text-[0.65rem] border px-1.5 py-0.5 rounded-sm"
+                :class="paper.note === 'Refeered'
+                  ? 'text-gray-700 dark:text-zinc-300 border-gray-400 dark:border-zinc-500'
+                  : 'text-gray-400 dark:text-zinc-500 border-gray-200 dark:border-zinc-700'"
+              >{{ paper.note === 'Refeered' ? 'refereed' : 'non-refereed' }}</span>
+
+              <!-- Link icons -->
+              <a
+                v-for="link in paper.links"
+                :key="link.name"
+                :href="link.url"
+                target="_blank"
+                rel="noopener"
+                :title="link.name"
+                class="text-gray-500 dark:text-zinc-400 hover:text-primary transition-colors p-0.5 rounded"
+              >
+                <Icon :name="linkIcon(link.name, link.icon)" class="w-[1.05rem] h-[1.05rem]" />
               </a>
             </div>
-
-          </article>
-        </div>
-      </section>
-
-  </main>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
 </template>

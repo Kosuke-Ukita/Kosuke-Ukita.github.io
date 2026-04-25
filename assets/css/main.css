@@ -1,4 +1,121 @@
 /* assets/css/main.css */
+
+/* ─── Primary accent color ─────────────────────────────────────────────────
+   All values are R G B (used with Tailwind's `rgb(var(...) / alpha)` syntax).
+   Uncomment one to change the site's accent color.
+   ───────────────────────────────────────────────────────────────────────── */
 :root {
-  --color-primary: 197 115 47;
+  --color-primary: 50  65  155;      /* deep indigo        (default) */
+  /* --color-primary: 229 108 64; */  /* warm amber                  */
+  /* --color-primary: 37  99  235; */ /* blue-600                    */
+  /* --color-primary: 13  148 136; */ /* teal-600                    */
+  /* --color-primary: 124 58  237; */ /* violet-600                  */
+}
+
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Section headings (uppercase label style) ────────────────────────────── */
+.section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777;          /* was #b0b0b0 — darkened for readability */
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* ─── Sidebar / drawer navigation links ──────────────────────────────────── */
+.nav-link {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #6b7280;       /* was #9ca3af — gray-500 */
+  padding: 0.3rem 0;
+  transition: color 0.15s ease;
+  letter-spacing: 0.01em;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: rgb(var(--color-primary));
+}
+.nav-link.active {
+  font-weight: 600;
+}
+
+/* ─── Publication entry components ───────────────────────────────────────── */
+.pub-number {
+  font-family: 'JetBrains Mono', monospace;
+  color: #9ca3af;       /* was #d1d5db — gray-400, still subtle */
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  width: 2rem;
+  text-align: right;
+  padding-top: 0.15rem;
+  user-select: none;
+}
+
+.pub-title {
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.45;
+}
+
+.pub-authors {
+  color: #4b5563;       /* was #6b7280 — gray-600, slightly darker */
+  font-size: 0.78rem;
+  margin-top: 0.2rem;
+  line-height: 1.5;
+}
+
+.pub-authors strong {
+  color: #1f2937;       /* gray-800 */
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pub-venue {
+  color: #6b7280;       /* was #9ca3af — gray-500 */
+  font-size: 0.78rem;
+  font-style: italic;
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+
+/* ─── Dark mode overrides for custom classes ─────────────────────────────── */
+html.dark .section-title {
+  color: #a1a1aa;
+  border-bottom-color: #3f3f46;
+}
+
+html.dark .nav-link {
+  color: #a1a1aa;
+}
+
+html.dark .pub-number {
+  color: #71717a;
+}
+
+html.dark .pub-title {
+  color: #f4f4f5;
+}
+
+html.dark .pub-authors {
+  color: #d4d4d8;
+}
+
+html.dark .pub-authors strong {
+  color: #f4f4f5;
+}
+
+html.dark .pub-venue {
+  color: #a1a1aa;
 }

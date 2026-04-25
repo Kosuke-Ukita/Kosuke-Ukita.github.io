@@ -9,7 +9,7 @@ export const experience = [
   },
   { 
     name: "Teaching Assistant", 
-    year: "Apr. 2024 - Jan. 2026", 
+    year: "Apr. 2024 - Jun. 2026",
     descriptions: [
       "Teacher: Tsuyoshi Okita",
       "Deep Learning, Deep Learning Project, etc.",

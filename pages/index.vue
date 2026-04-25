@@ -1,175 +1,184 @@
-
 <script setup lang="ts">
 import { profile } from '~/data/profile'
 import { news } from '~/data/news'
 import { publications } from '~/data/publications'
 import { awards } from '~/data/awards'
 import { grants } from '~/data/grants'
-import { education } from '~/data/education'
 import { others } from '~/data/others'
 
-profile.sociels = [
-    {name: "GitHub", url: "https://github.com/Kosuke-Ukita", icon: "uil:github", color: "hover:text-gray-300 transition"},
-    {name: "Hugging Face", url: "https://huggingface.co/sha-ce", icon: "simple-icons:huggingface", color: "hover:text-yellow-500 transition"},
-    {name: "Google Scholar", url: "https://scholar.google.com/citations?user=rmfjRpEAAAAJ", icon: "simple-icons:googlescholar", color: "hover:text-blue-600 transition"},
-    {name: "ORCID", url: "https://orcid.org/0009-0008-3325-1363", icon: "simple-icons:orcid", color: "hover:text-green-600 transition"},
-    {name: "LinkedIn", url: "https://www.linkedin.com/in/ukita000", icon: "uil:linkedin", color: "hover:text-blue-700 transition"},
-    {name: "X", url: "./", icon: "fa6-brands:x-twitter", color: "hover:text-gray-300 transition"},
-    {name: "Instagram", url: "./", icon: "simple-icons:instagram", color: "hover:text-pink-500 transition"},
-    {name: "YouTube", url: "./", icon: "simple-icons:youtube", color: "hover:text-red-500 transition"},
-]
+const highlightAuthor = (authors: string) =>
+  authors
+    .replace(/Kosuke Ukita/g, `<strong>Kosuke Ukita</strong>`)
+    .replace(/浮田嵩祐/g, `<strong>浮田嵩祐</strong>`)
 
-const highlightAuthor = (authors: string) => {
-  return authors
-    .replace(/Kosuke Ukita/g, `<span class="underline">Kosuke Ukita</span>`)
-    .replace(/浮田嵩祐/g, `<span class="underline">浮田嵩祐</span>`);
+// Map link name → icon (falls back to data icon, then generic)
+const linkIcon = (name: string, dataIcon?: string): string => {
+  const map: Record<string, string> = {
+    PDF:    'heroicons:document-text',
+    Code:   'heroicons:code-bracket-square',
+    Page:   'heroicons:arrow-top-right-on-square',
+    Arxiv:  'heroicons:document-magnifying-glass',
+    Slides: 'heroicons:presentation-chart-bar',
+    Video:  'heroicons:video-camera',
+    Demo:   'heroicons:play-circle',
+    Poster: 'heroicons:photo',
+  }
+  return map[name] || dataIcon || 'heroicons:link'
 }
+
+const researchInterests = others.find(o => o.category === 'Research Interests')?.items ?? []
+const recentNews = news.slice(0, 5)
+const selectedPubs = publications.slice(0, 3)
+const recentGrants = grants.slice(0, 5)
+const recentAwards = awards.slice(0, 5)
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-slate-800 font-sans selection:bg-primary/10">
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
-      
-      <section id="about" class="grid md:grid-cols-12 gap-10 items-center scroll-mt-24">
-        <div class="md:col-span-4 flex justify-center md:justify-start">
-          <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-xl border-4 border-white rotate-3 hover:rotate-0 transition duration-500">
-            <img src="/assets/photo.jpg" alt="Profile" class="w-full h-full object-cover bg-slate-200" 
-                 onerror="this.onerror=null; this.src='https://placehold.co/400x400?text=Photo'"/>
-          </div>
+  <div class="space-y-11">
+
+    <!-- Brief bio -->
+    <section>
+      <p class="text-sm text-slate-600 dark:text-zinc-300 leading-relaxed whitespace-pre-line">{{ profile.bio }}</p>
+    </section>
+
+    <!-- News -->
+    <section>
+      <h2 class="section-title">News</h2>
+      <div class="space-y-3.5">
+        <div
+          v-for="(item, i) in recentNews"
+          :key="i"
+          class="flex gap-4 sm:gap-6 text-sm leading-relaxed"
+        >
+          <span class="font-mono text-gray-400 dark:text-zinc-500 shrink-0 w-[4.5rem] text-[0.72rem] pt-0.5">{{ item.date }}</span>
+          <span class="text-gray-700 dark:text-zinc-300">{{ item.content }}</span>
         </div>
-        
-        <div class="md:col-span-8 space-y-2">
+      </div>
+      <div class="mt-5">
+        <NuxtLink to="/news" class="font-mono text-[0.72rem] text-primary hover:underline underline-offset-2">
+          All news →
+        </NuxtLink>
+      </div>
+    </section>
+
+    <!-- Selected Publications -->
+    <section>
+      <h2 class="section-title">Selected Publications</h2>
+      <ol class="space-y-7">
+        <li v-for="(paper, i) in selectedPubs" :key="i" class="flex gap-4">
+          <span class="pub-number">[{{ i + 1 }}]</span>
+
+          <div class="min-w-0 flex-1">
+            <!-- Title -->
+            <p class="pub-title text-sm leading-snug">{{ paper.title }}</p>
+
+            <!-- Authors -->
+            <p class="pub-authors" v-html="highlightAuthor(paper.authors)" />
+
+            <!-- Venue -->
+            <p class="pub-venue">
+              {{ paper.venue }}<span v-if="paper.date">, {{ paper.date }}</span>
+              <span v-if="paper.location" class="not-italic text-gray-400 dark:text-zinc-500"> &middot; {{ paper.location }}</span>
+            </p>
+
+            <!-- Tags, refereed status, and link icons -->
+            <div class="flex flex-wrap items-center gap-2 mt-2">
+              <!-- Presentation type badge -->
+              <span
+                v-if="paper.type"
+                class="font-mono text-[0.65rem] border px-1.5 py-0.5 rounded-sm"
+                :class="['Spotlight', 'Oral'].includes(paper.type)
+                  ? 'text-primary border-primary/40'
+                  : 'text-gray-500 dark:text-zinc-400 border-gray-300 dark:border-zinc-600'"
+              >{{ paper.type }}</span>
+
+              <!-- Refereed status (always shown) -->
+              <span
+                class="font-mono text-[0.65rem] border px-1.5 py-0.5 rounded-sm"
+                :class="paper.note === 'Refeered'
+                  ? 'text-gray-700 dark:text-zinc-300 border-gray-400 dark:border-zinc-500'
+                  : 'text-gray-400 dark:text-zinc-500 border-gray-200 dark:border-zinc-700'"
+              >{{ paper.note === 'Refeered' ? 'refereed' : 'non-refereed' }}</span>
+
+              <!-- Link icons -->
+              <a
+                v-for="link in paper.links"
+                :key="link.name"
+                :href="link.url"
+                target="_blank"
+                rel="noopener"
+                :title="link.name"
+                class="text-gray-500 dark:text-zinc-400 hover:text-primary transition-colors p-0.5 rounded"
+              >
+                <Icon :name="linkIcon(link.name, link.icon)" class="w-[1.05rem] h-[1.05rem]" />
+              </a>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <div class="mt-6">
+        <NuxtLink to="/publications" class="font-mono text-[0.72rem] text-primary hover:underline underline-offset-2">
+          All publications →
+        </NuxtLink>
+      </div>
+    </section>
+
+    <!-- Grants -->
+    <section v-if="recentGrants.length">
+      <h2 class="section-title">Grants</h2>
+      <ul class="space-y-4">
+        <li v-for="(grant, i) in recentGrants" :key="i" class="flex gap-2 text-sm">
+          <span class="text-gray-300 dark:text-zinc-600 shrink-0 mt-0.5 select-none">–</span>
           <div>
-            <h1 class="text-2xl md:text-2xl font-extrabold text-slate-800 tracking-tight mb-0">{{ profile.name }}</h1>
-            <p class="text-xl mb-2">浮田 嵩祐</p>
-            <p class="text-xl text-primary font-medium">{{ profile.role }}</p>
-            <p class="text-slate-500 flex items-center gap-2"><Icon name="heroicons:building-library" /> {{ profile.affiliation }}</p>
-            <p class="text-slate-500 flex items-center gap-2"><Icon name="heroicons:map-pin" />Fukuoka, Japan</p>
-          </div>
-          
-          <p class="text-xs text-slate-500 items-center mt-1">
-            Department of Creative Informatics, Graduate School of Computer Science and Systems Engineering.
-          </p>
-          <p class="leading-relaxed text-slate-600 whitespace-pre-line text-lg">{{ profile.bio }}</p>
-          
-          <div class="flex flex-wrap gap-3 pt-2">
-            <a :href="`mailto:${profile.email}`" class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-700 hover:bg-slate-200 transition text-sm font-medium"><Icon name="heroicons:envelope" class="w-4 h-4" /> Email : {{ profile.email }} </a>
-          </div>
-          <div class="flex flex-wrap gap-3 pt-2">
-            <a v-for="social in profile.socials" :key="social.name" :href="social.url" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-sm text-slate-700" :class="social.color">
-              <Icon :name="social.icon" class="w-4 h-4" :class="social.color" />{{ social.name }}
+            <a :href="grant.url" target="_blank" rel="noopener" class="font-medium text-gray-800 dark:text-zinc-200 hover:text-primary transition-colors">
+              {{ grant.name }}
             </a>
+            <p class="text-[0.72rem] text-gray-400 dark:text-zinc-500 mt-0.5 font-mono">{{ grant.organization }} · {{ grant.year }}</p>
           </div>
-        </div>
-      </section>
+        </li>
+      </ul>
+      <div class="mt-5">
+        <a href="/cv#grants" class="font-mono text-[0.72rem] text-primary hover:underline underline-offset-2">
+          All grants →
+        </a>
+      </div>
+    </section>
 
-      <section id="news" class="scroll-mt-24">
-        <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-6"><Icon name="heroicons:megaphone" class="text-primary/90" /> News </h3>
-          <div class="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
-            <div v-for="(info, index) in news" :key="index" class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 border-b border-slate-50 last:border-0 hover:bg-slate-50 transition">
-              <span class="text-sm font-mono text-slate-500 min-w-[100px]">{{ info.date }}</span>
-              <span class="text-slate-800">{{ info.content }}</span>
-            </div>
+    <!-- Awards -->
+    <section v-if="recentAwards.length">
+      <h2 class="section-title">Awards</h2>
+      <ul class="space-y-4">
+        <li v-for="(award, i) in recentAwards" :key="i" class="flex gap-2 text-sm">
+          <span class="text-gray-300 dark:text-zinc-600 shrink-0 mt-0.5 select-none">–</span>
+          <div>
+            <a :href="award.url" target="_blank" rel="noopener" class="font-medium text-gray-800 dark:text-zinc-200 hover:text-primary transition-colors">
+              {{ award.title }}
+            </a>
+            <p class="text-[0.72rem] text-gray-400 dark:text-zinc-500 mt-0.5 font-mono">{{ award.organization }} · {{ award.year }}</p>
           </div>
-      </section>
+        </li>
+      </ul>
+      <div class="mt-5">
+        <a href="/cv#awards" class="font-mono text-[0.72rem] text-primary hover:underline underline-offset-2">
+          All awards →
+        </a>
+      </div>
+    </section>
 
-      <section id="publications" class="scroll-mt-24">
-        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4"><Icon name="heroicons:book-open" class="text-primary" /> Publications </h3>
-        <p class="text-sm text-slate-500 mb-4">Recent 3 publications</p>
-        
-        <div class="space-y-2 ml-0 pl-2 relative">
-          <article v-for="(paper, index) in publications.slice(0, 3)" :key="index" class="relative group border-l-2 border-primary/50 px-3 py-2 rounded-md hover:shadow-md transition-all duration-300">
-            <p class="absolute -left-[32px] text-sm text-primary/90 font-bold">[{{ index+1 }}]</p>
-            
-            <div class="flex justify-between">
-              <h4 class="text-md font-bold text-slate-900 leading-snug group-hover:text-primary transition-colors">{{ paper.title }}</h4>
-              <div class="flex gap-1 shrink-0 self-start">
-                <span v-if="paper.type" class="inline-flex items-center px-1 py-0.5 rounded text-xs font-medium bg-primary/5 text-primary border border-primary/10 whitespace-nowrap">{{ paper.type }}</span>
-                <span v-if="paper.note" class="inline-flex items-center px-1 py-0.5 rounded text-xs font-medium bg-green-50 text-green-700 border border-green-100 whitespace-nowrap">{{ paper.note }}</span>
-              </div>
-            </div>
-            <div class="text-slate-500 text-sm"><span v-html="highlightAuthor(paper.authors)"></span></div>
-            <div class="text-xs font-semibold text-slate-900 italic">{{ paper.venue }}</div>
+    <!-- Research Interests -->
+    <section v-if="researchInterests.length">
+      <h2 class="section-title">Research Interests</h2>
+      <ul class="space-y-1.5">
+        <li
+          v-for="interest in researchInterests"
+          :key="interest"
+          class="flex items-start gap-2.5 text-sm text-gray-700 dark:text-zinc-300"
+        >
+          <span class="text-primary shrink-0 select-none mt-px">—</span>
+          <span class="font-mono">{{ interest }}</span>
+        </li>
+      </ul>
+    </section>
 
-            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500 border-t border-slate-100 pt-1 mb-1">
-              <span class="text-xs flex items-center gap-1"><Icon name="heroicons:calendar" class="w-4 h-4 text-slate-400" />{{ paper.date }}</span>
-              <span class="text-xs flex items-center gap-1" v-if="paper.location"><Icon name="heroicons:map-pin" class="w-4 h-4 text-slate-400" />{{ paper.location }}</span>
-            </div>
-            <div class="flex flex-wrap items-center gap-1 mt-1text-slate-500">
-              <a v-for="link in paper.links" :key="link.name" :href="link.url" class="flex items-center gap-1 text-xs font-bold text-slate-700 border border-slate-300 px-2 py-1 rounded-lg hover:border-primary hover:text-primary hover:bg-primary/5 transition bg-slate-50">
-                <Icon :name="link.icon" class="w-4 h-4" />{{ link.name }}
-              </a>
-            </div>
-
-          </article>
-        </div>
-      </section>
-
-      <section id="grants" class="scroll-mt-24">
-        <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-4">
-          <Icon name="heroicons:currency-dollar" class="text-primary" /> Grants
-        </h3>
-        
-        <div class="space-y-4">
-          <div v-for="(grant, index) in grants" :key="index" class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition flex items-center gap-4">            
-            <div>
-              <a :href="grant.url" target="_blank" rel="noopener noreferrer" class="block">
-                <p class="font-bold text-slate-900 text-sm leading-tight underline hover:text-primary">{{ grant.name }}</p>
-              </a>
-              <div class="flex flex-wrap items-center gap-x-2 text-sm text-slate-600 mt-1">
-                <span>{{ grant.organization }}</span>
-                <span class="text-xs text-slate-400 bg-slate-50 inline-block p-1 my-0 rounded">{{ grant.description }}</span>
-                <span class="text-slate-300 hidden sm:inline">|</span>
-                <span class="text-slate-500 text-sm">{{ grant.year }}</span>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      <section id="awards" class="scroll-mt-24">
-        <h3 class="text-2xl font-bold text-slate-900 flex items-center gap-2 mb-6">
-          <Icon name="heroicons:trophy" class="text-primary/90" /> Awards
-        </h3>
-        
-        <div class="space-y-4">
-          <div v-for="(award, index) in awards" :key="index" class="p-4 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md transition flex items-center gap-4">
-            <div>
-              <a :href="award.url" target="_blank" rel="noopener noreferrer" class="block">
-                <p class="font-bold text-slate-900 text-sm leading-tight underline hover:text-primary">{{ award.title }}</p>
-              </a>
-              <div class="flex flex-wrap items-center gap-x-2  text-sm text-slate-600 mt-1">
-                <span>{{ award.organization }}</span>
-                <span class="text-slate-300 hidden sm:inline">|</span>
-                <span class="text-slate-500 text-sm">{{ award.year }}</span>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      <section id="others" class="scroll-mt-24">
-        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4">
-          <Icon name="heroicons:cpu-chip" class="text-primary/90" /> Others
-        </h3>
-        
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div v-for="(otherGroup, index) in others" :key="index" class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
-            <h4 class="font-bold text-slate-800 mb-3 border-b border-slate-100 pb-2">
-              {{ otherGroup.category }}
-            </h4>
-            <div class="flex flex-wrap gap-2">
-              <span v-for="item in otherGroup.items" :key="item" 
-                    class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full font-medium">
-                {{ item }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
   </div>
 </template>
