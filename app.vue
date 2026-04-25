@@ -59,7 +59,7 @@ const toggleDark = () => {
     <!-- ── Mobile drawer (slides from left) ───────────────────────────────── -->
     <aside
       :class="[
-        'fixed inset-y-0 left-0 z-30 w-56 bg-white dark:bg-zinc-900 border-r border-gray-100 dark:border-zinc-800',
+        'fixed inset-y-0 left-0 z-30 w-72 bg-white dark:bg-zinc-900 border-r border-gray-100 dark:border-zinc-800',
         'flex flex-col px-5 py-7 overflow-y-auto',
         'transition-transform duration-200 ease-in-out md:hidden',
         isMenuOpen ? 'translate-x-0' : '-translate-x-full',
@@ -78,6 +78,7 @@ const toggleDark = () => {
         <p class="text-xs text-gray-500 dark:text-zinc-400">浮田 嵩祐</p>
         <p class="text-xs text-primary font-medium mt-1">{{ profile.role }}</p>
         <p class="text-xs text-gray-600 dark:text-zinc-400 mt-0.5">{{ profile.affiliation }}</p>
+        <p class="text-xs text-gray-400 dark:text-zinc-500 mt-0.5">{{ profile.place }}</p>
       </div>
       <div class="flex flex-wrap gap-2.5 mb-2">
         <a
@@ -146,8 +147,8 @@ const toggleDark = () => {
             </h1>
             <p class="text-xs text-gray-500 dark:text-zinc-400">浮田 嵩祐</p>
             <p class="text-xs text-primary font-medium mt-1">{{ profile.role }}</p>
-            <p class="text-xs text-gray-600 dark:text-zinc-400 mt-0.5"><Icon name="heroicons:building-library" /> {{ profile.affiliation }}</p>
-            <p class="text-xs text-gray-400 dark:text-zinc-500 mt-0.5"><Icon name="heroicons:map-pin" /> {{ profile.place }}</p>
+            <p class="text-xs text-gray-600 dark:text-zinc-400 mt-0.5">{{ profile.affiliation }}</p>
+            <p class="text-xs text-gray-400 dark:text-zinc-500 mt-0.5">{{ profile.place }}</p>
             <div class="flex flex-wrap gap-2.5 mt-2">
               <a
                 v-for="social in profile.socials"
