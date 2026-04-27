@@ -17,8 +17,10 @@ useHead({ title: 'Biography' })
         にて深層学習および生成モデルの研究に従事している．
       </p>
       <p>
-        <a href="https://www.ccr.kyutech.ac.jp/dc_support/spring/" target="_blank" rel="noopener" class="text-primary hover:underline underline-offset-2">次世代研究者挑戦的研究プログラム（SPRING）</a>
+        <a href="https://www.ccr.kyutech.ac.jp/dc_support/spring" target="_blank" rel="noopener" class="text-primary hover:underline underline-offset-2">次世代研究者挑戦的研究プログラム（SPRING）</a>
         の支援を受け，主にFlow MatchingやDiffusion Modelsの計算効率化，推論の高速化，および表現学習の理論的基盤に関心を持つ．
+      </p>
+      <p>
         最近の成果として，認識性能と生成品質の両立を目的としたセンサ基盤モデルを提案し，AISTATS 2026でのSpotlight発表（採択率上位3%）や，
         Flow Matchingの推論速度半減を達成し，PAKDD 2026でのOral発表（2026 PAKDD Student Travel Award受賞）を行う．
       </p>
@@ -35,11 +37,12 @@ useHead({ title: 'Biography' })
       </p>
       <p>
         Supported by the 
-        <a href="https://www.ccr.kyutech.ac.jp/dc_support/spring/" target="_blank" rel="noopener" class="text-primary hover:underline underline-offset-2">Support for Pioneering Research in Innovative Doctoral Courses (SPRING)</a>
+        <a href="https://www.ccr.kyutech.ac.jp/dc_support/spring" target="_blank" rel="noopener" class="text-primary hover:underline underline-offset-2">Support for Pioneering Research in Innovative Doctoral Courses (SPRING)</a>
         program, they conduct research on deep learning and generative modeling, with a focus on enhancing the efficiency of Flow Matching and Diffusion Models, as well as exploring the theoretical foundations of representation learning.
+      </p>
+      <p>
         Their recent achievements include a Spotlight presentation (top 3% of submissions) at AISTATS 2026 and an Oral presentation at PAKDD 2026, where they received the 2026 PAKDD Student Travel Award.
       </p>
-
       
     </div>
 
