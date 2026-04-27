@@ -18,7 +18,7 @@ useHead({ title: 'Biography' })
       </p>
       <p>
         <a href="https://www.ccr.kyutech.ac.jp/dc_support/spring" target="_blank" rel="noopener" class="text-primary hover:underline underline-offset-2">次世代研究者挑戦的研究プログラム（SPRING）</a>
-        の支援を受け，主にFlow MatchingやDiffusion Modelsの計算効率化，推論の高速化，および表現学習の理論的基盤に関心を持つ．
+        の支援を受け，主にFlow MatchingやDiffusion Modelsの計算効率化，推論の高速化，および表現学習の基盤理論に関心を持つ．
       </p>
       <p>
         最近の成果として，認識性能と生成品質の両立を目的としたセンサ基盤モデルを提案し，AISTATS 2026でのSpotlight発表（採択率上位3%）や，
