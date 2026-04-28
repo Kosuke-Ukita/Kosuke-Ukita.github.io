@@ -31,14 +31,19 @@ const recentNews = news.slice(0, 5)
 const selectedPubs = publications.slice(0, 3)
 const recentGrants = grants.slice(0, 5)
 const recentAwards = awards.slice(0, 5)
+
+useHead({ title: 'Home' })
 </script>
 
 <template>
   <div class="space-y-11">
+  <h1 class="font-mono font-semibold text-gray-900 dark:text-zinc-100 text-xl tracking-tight mb-10">Home</h1>
 
     <!-- Brief bio -->
     <section>
       <p class="text-sm text-slate-600 dark:text-zinc-300 leading-relaxed whitespace-pre-line">{{ profile.bio }}</p>
+      <div class="my-10"></div>
+      <p class="text-sm text-slate-600 dark:text-zinc-300 leading-relaxed whitespace-pre-line">{{ profile.bioen }}</p>
     </section>
 
     <!-- News -->
@@ -139,7 +144,7 @@ const recentAwards = awards.slice(0, 5)
         </li>
       </ul>
       <div class="mt-5">
-        <a href="/cv#grants" class="font-mono text-[0.72rem] text-primary hover:underline underline-offset-2">
+        <a href="/grants" class="font-mono text-[0.72rem] text-primary hover:underline underline-offset-2">
           All grants →
         </a>
       </div>
@@ -159,7 +164,7 @@ const recentAwards = awards.slice(0, 5)
         </li>
       </ul>
       <div class="mt-5">
-        <a href="/cv#awards" class="font-mono text-[0.72rem] text-primary hover:underline underline-offset-2">
+        <a href="/awards" class="font-mono text-[0.72rem] text-primary hover:underline underline-offset-2">
           All awards →
         </a>
       </div>

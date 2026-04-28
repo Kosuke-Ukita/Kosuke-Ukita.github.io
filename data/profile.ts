@@ -1,5 +1,6 @@
 export const profile = {
   name: "Kosuke Ukita",
+  namejp: "浮田 嵩祐",
   role: "PhD student / Researcher",
   grade: "PhD student (D1), full-time",
   affiliation: "Kyushu Institute of Technology",
@@ -15,6 +16,8 @@ export const profile = {
     // {name: "Instagram", url: "./", icon: "simple-icons:instagram", color: "hover:text-pink-500 transition"},
     // {name: "YouTube", url: "./", icon: "simple-icons:youtube", color: "hover:text-red-500 transition"},
   ],
-  bio: `こんにちは．浮田 嵩祐です．AIに関する研究をしている大学院生です．
-  生成AIの効率化や基盤モデル構築などの深層学習領域や，機械学習の基礎理論に関心を持っています．最近はFlow Matchingあたりに関心があります．`
+  bio: `こんにちは．浮田 嵩祐です．AIに関する研究をしているPhD学生です．
+  生成AIの効率化や基盤モデル構築などの深層学習領域や，機械学習の基礎理論に関心を持っています．最近はFlow Matchingあたりに関心があります．`,
+  bioen: `Hello．I am Kosuke Ukita, PhD student researching AI.
+  Passionate about deep learning—specifically generative AI efficiency and foundation models—as well as fundamental ML theories. Currently focusing heavily on Flow Matching.`
 }

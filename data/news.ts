@@ -1,4 +1,5 @@
 export const news = [
+  { date: "2026-04-17", content: "電気通信普及財団の海外渡航旅費援助（2026年度4月）に援助決定者として採択されました．", url: "" },
   { date: "2026-03-19", content: "JSTが推進するSPRINGプロジェクトにおいてSPRING研究学生として採用されました．", url: "" },
   { date: "2026-03-16", content: "PAKDD2026においてStudent Travel Awardを受賞しました．", url: "" },
   { date: "2026-02-08", content: "我々の論文が国際会議PAKDD2026にOral presentationとして採択されました．", url: "" },

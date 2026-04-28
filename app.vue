@@ -74,8 +74,8 @@ const toggleDark = () => {
         />
       </div>
       <div class="mb-3 space-y-0.5">
-        <h2 class="font-mono font-semibold text-gray-900 dark:text-zinc-100 text-sm">Kosuke Ukita</h2>
-        <p class="text-xs text-gray-500 dark:text-zinc-400">浮田 嵩祐</p>
+        <h2 class="font-mono font-semibold text-gray-900 dark:text-zinc-100 text-sm">{{ profile.name }}</h2>
+        <p class="text-xs text-gray-500 dark:text-zinc-400">{{ profile.namejp }}</p>
         <p class="text-xs text-primary font-medium mt-1">{{ profile.role }}</p>
         <p class="text-xs text-gray-600 dark:text-zinc-400 mt-0.5">{{ profile.affiliation }}</p>
         <p class="text-xs text-gray-400 dark:text-zinc-500 mt-0.5">{{ profile.place }}</p>
@@ -106,7 +106,7 @@ const toggleDark = () => {
         >{{ link.label }}</NuxtLink>
       </nav>
       <div class="mt-auto pt-8 text-[0.65rem] text-gray-400 dark:text-zinc-500 font-mono">
-        &copy; {{ new Date().getFullYear() }} Kosuke Ukita
+        &copy; {{ new Date().getFullYear() }} {{ profile.name }}
       </div>
     </aside>
 
@@ -144,10 +144,8 @@ const toggleDark = () => {
             onerror="this.onerror=null; this.src='https://placehold.co/400x400?text=KU'"
           />
           <div class="space-y-0.5">
-            <h1 class="font-mono font-semibold text-gray-900 dark:text-zinc-100 text-[1rem] leading-tight tracking-tight">
-              Kosuke Ukita
-            </h1>
-            <p class="text-xs text-gray-500 dark:text-zinc-400">浮田 嵩祐</p>
+            <h1 class="font-mono font-semibold text-gray-900 dark:text-zinc-100 text-[1rem] leading-tight tracking-tight">{{ profile.name }}</h1>
+            <p class="text-xs text-gray-500 dark:text-zinc-400">{{ profile.namejp }}</p>
             <p class="text-xs text-primary font-medium mt-1">{{ profile.role }}</p>
             <p class="text-xs text-gray-600 dark:text-zinc-400 mt-0.5">{{ profile.affiliation }}</p>
             <p class="text-xs text-gray-400 dark:text-zinc-500 mt-0.5">{{ profile.place }}</p>
